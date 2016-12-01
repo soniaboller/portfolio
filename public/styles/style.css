@@ -1,0 +1,86 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+  background-color: #000;
+  color: #696969; }
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: fixed; }
+
+button {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding: 0 30px;
+  color: #bbb;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 100;
+  line-height: 38px;
+  letter-spacing: .25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid #555;
+  cursor: pointer;
+  box-sizing: border-box; }
+
+button:hover {
+  border: 1px solid #bbb; }
+
+button:focus {
+  outline: 0 !important; }
+
+.button-clicked {
+  color: #555;
+  border: 1px solid #bbb; }
+
+.button-clicked:hover {
+  border: 1px solid #555; }
+
+.button-clicked:focus {
+  outline: 0; }
+
+#about-container, #project-container {
+  margin: 1%;
+  z-index: 100;
+  width: 50%;
+  clear: both; }
+
+#showAbout, #showProjects {
+  display: none;
+  z-index: 100;
+  clear: both;
+  margin: 0;
+  padding: 0; }
+
+#project-container {
+  position: relative;
+  float: right; }
+
+#showProjects {
+  float: right;
+  text-align: left; }
+
+#projects-button {
+  float: right;
+  clear: both; }
+
+#about-container {
+  position: fixed;
+  float: left; }
+
+#showAbout {
+  float: left; }
+
+#about-button {
+  float: left;
+  clear: both; }
+
+#interests {
+  display: none; }
