@@ -82,6 +82,9 @@ button:focus {
   padding: 1%;
   margin: 1%; }
 
+.project-image:hover {
+  border: 1px solid #bbb; }
+
 .project-box {
   float: right;
   clear: both; }
@@ -103,3 +106,15 @@ button:focus {
 
 #interests {
   display: none; }
+
+.hideText {
+  display: none;
+  float: right;
+  text-align: right;
+  position: absolute;
+  right: 10%;
+  font-size: 2vw;
+  background-color: black; }
+
+.showText {
+  display: block; }

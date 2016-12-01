@@ -81,4 +81,16 @@ $(document).ready(function() {
             app.black = !app.black;
         }
     }
+    $('.project-image').on('mouseenter', function(){
+        var self = this;
+        // $(self).css('opacity','0.5');
+        // $(self).children().last().velocity('fadeIn', { duration: 1000 });
+        // console.log(selfie);
+        $(self).next().velocity('fadeIn', { duration: 1000 });
+    }).on('mouseleave', function(){
+        var self = this;
+        // $(self).css('opacity','1');
+        // $(self).children().last().velocity('fadeOut', { duration: 1000 });
+        $(self).next().velocity('fadeOut', { duration: 1000 });
+    });
 });
