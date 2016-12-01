@@ -6,9 +6,11 @@ app.projectClicked = false;
 app.black = true;
 
 $(document).ready(function() {
+    $('button').mouseup(function(){
+        $(this).blur();
+    });
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
-
     function aboutClick(){
         changeColor();
         if (!app.aboutClicked){
@@ -34,7 +36,7 @@ $(document).ready(function() {
                                 loop: true,
                                 showCursor: false
                             });
-                        },
+                        }
                     });
                 }
             });
@@ -66,7 +68,7 @@ $(document).ready(function() {
                 particle = particles[i++];
                 particle.material.color.setHex(0x000000);
             }
-            app.black = false
+            app.black = !app.black;
         }
         else {
             $('body').css('background-color', '#000');
@@ -76,7 +78,7 @@ $(document).ready(function() {
                 particle = particles[i++];
                 particle.material.color.setHex(0xffffff);
             }
-            app.black = true
+            app.black = !app.black;
         }
     }
 });

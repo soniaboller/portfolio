@@ -4,10 +4,14 @@ body {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     //font-family: 'Alegreya Sans SC', Helvetica, Arial, sans-serif;
     //font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 16px;
     overflow: hidden;
+    font-size: 16px;
     background-color: #000;
     color: #696969;
+}
+
+img {
+    width: 50%;
 }
 
 canvas{
@@ -69,6 +73,8 @@ button:focus {
     clear:both;
     margin: 0;
     padding: 0;
+    height: 90vh;
+    overflow-y: auto;
 }
 
 #project-container{
@@ -79,6 +85,22 @@ button:focus {
 #showProjects{
     float:right;
     text-align: left;
+    overflow-y: scroll;
+    position:relative;
+}
+
+.project-image{
+    float: right;
+    clear:both;
+    position: relative;
+    border: 1px solid #555;
+    padding: 1%;
+    margin: 1%;
+}
+
+.project-box{
+    float: right;
+    clear:both;
 }
 
 #projects-button{
