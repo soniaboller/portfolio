@@ -10,6 +10,9 @@ body {
 img {
   width: 50%; }
 
+img:hover {
+  width: 50%; }
+
 canvas {
   width: 100vw;
   height: 100vh;
@@ -42,6 +45,10 @@ button:focus {
 .button-clicked {
   color: #555;
   border: 1px solid #bbb; }
+
+.about-box-border {
+  color: #555;
+  border-bottom: 1px solid #bbb; }
 
 .button-clicked:hover {
   border: 1px solid #555; }
@@ -80,10 +87,7 @@ button:focus {
   position: relative;
   border: 1px solid #555;
   padding: 1%;
-  margin: 1%; }
-
-.project-image:hover {
-  border: 1px solid #bbb; }
+  margin: 1% 0 1% 1%; }
 
 .project-box {
   float: right;
@@ -97,8 +101,16 @@ button:focus {
   position: fixed;
   float: left; }
 
+.about-box {
+  border-bottom: 1px solid #555;
+  color: #bbb;
+  width: 25vw;
+  margin: 1% 1% 1% 0;
+  padding: 2%; }
+
 #showAbout {
-  float: left; }
+  float: left;
+  width: 100%; }
 
 #about-button {
   float: left;
@@ -107,14 +119,35 @@ button:focus {
 #interests {
   display: none; }
 
-.hideText {
-  display: none;
-  float: right;
-  text-align: right;
-  position: absolute;
-  right: 10%;
-  font-size: 2vw;
-  background-color: black; }
+#modal {
+  position: fixed;
+  width: 60%;
+  top: 15%;
+  left: 20%;
+  transform: scale(1.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000; }
 
-.showText {
-  display: block; }
+#modal img {
+  width: 100%;
+  opacity: 0.95; }
+
+.modalOpen #page-wrapper {
+  -webkit-filter: blur(4px) grayscale(50%);
+  filter: blur(4px) grayscale(50%);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9); }
+
+.modalOpen #modal {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  opacity: 1;
+  pointer-events: auto; }
+
+#page-wrapper, #modal {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; }
