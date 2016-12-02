@@ -5,12 +5,49 @@ app.aboutClicked = false;
 app.projectClicked = false;
 app.black = true;
 app.modalClicked = false;
+app.projects = {
+    colorTheory: {
+        link: 'https://soniaboller.github.io/color-theory/',
+        information: 'Test your color skills by clicking on the darker boxes sandwiched between two lighter ones.',
+        technology: 'HTML5, CSS, and jQuery'
+    } ,
+    cameralessConcerts: {
+        link: 'https://github.com/karlyhoffman/project-2',
+        information: 'Collective sharing platform for concert photos.',
+        technology: 'Node / Express, mySQL, Bookshelf, Handlebars, Sass'
+    },
+    beerCrawl: {
+        link: 'https://github.com/BendyW/beercrawl-app-client',
+        information: 'Create a user. Join a team. Join an event as a team. Go on a beer crawl scavenger hunt.',
+        technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
+    },
+    audioViz: {
+        link: 'https://github.com/soniaboller/three-js-experiments',
+        information: 'Drag a song from your computer, see visualzation on screen.',
+        technology: 'THREE.js, Web Audio API, Node / Express'
+    }
+};
+app.icons = {
+    black : {
+        github: '/images/social-media/github-black.png',
+        linkedin: '/images/social-media/linkedin-black.png',
+        instagram: '/images/social-media/instagram-black.png',
+        email: '/images/social-media/mail-black.png'
+    },
+    white: {
+        github: '/images/social-media/github-white.png',
+        linkedin: '/images/social-media/linkedin-white.png',
+        instagram: '/images/social-media/instagram-white.png',
+        email: '/images/social-media/mail-white.png'
+    }
+};
 
 $(document).ready(function() {
     var insta = $('#instagram');
     console.log(insta);
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
+    $('#modal').on('mouseover', displayInformation)
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
     $('.project-image').on('click', projectImageClick)
@@ -45,6 +82,7 @@ $(document).ready(function() {
 
     function aboutClick(){
         changeColor();
+        if (app.modalClicked) clearModal();
         if (!app.aboutClicked){
             $('#show-about').velocity('fadeIn', { duration: 1000 });
             // $('#name').typed({
@@ -99,6 +137,7 @@ $(document).ready(function() {
 
     function projectClick(){
         changeColor();
+        if (app.modalClicked) clearModal();
         if (!app.projectClicked){
             $('#show-projects').velocity('slideDown', { duration: 1000 });
             app.projectClicked = !app.projectClicked;
@@ -106,9 +145,6 @@ $(document).ready(function() {
         else{
             $('#show-projects').velocity('slideUp', { duration: 1000 });
             app.projectClicked = !app.projectClicked;
-        }
-        if (app.modalClicked){
-            clearModal();
         }
     }
 
@@ -120,19 +156,10 @@ $(document).ready(function() {
                 $('body').css('backgroundColor', '#fff');
                 $('.about-box').addClass('about-box-border');
                 $('#about-button, #projects-button').addClass('button-clicked');
-                $('#instagram').attr('src','/images/social-media/instagram-black.png');
-                $('#github').attr('src','/images/social-media/github-black.png');
-                $('#facebook').attr('src','/images/social-media/facebook-black.png');
-                $('#linkedin').attr('src','/images/social-media/linkedin-black.png');
-
-                // $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-black.png" alt="instagram"></a>');
-
-                // $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-black.png"></a>');
-                //
-                // $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-black.png" alt="facebook">');
-                //
-                // $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-black.png"></a>');
-                // console.log(button)
+                $('#github').attr('src', app.icons.black.github);
+                $('#linkedin').attr('src', app.icons.black.linkedin);
+                $('#instagram').attr('src', app.icons.black.instagram);
+                $('#email').attr('src', app.icons.black.email);
                 renderer.setClearColor(0xffffff, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
@@ -144,18 +171,10 @@ $(document).ready(function() {
                 $('body').css('backgroundColor', '#000');
                 $('.about-box').removeClass('about-box-border');
                 $('#about-button, #projects-button').removeClass('button-clicked');
-
-                $('#instagram').attr('src','/images/social-media/instagram-white.png');
-                $('#github').attr('src','/images/social-media/github-white.png');
-                $('#facebook').attr('src','/images/social-media/facebook-white.png');
-                $('#linkedin').attr('src','/images/social-media/linkedin-white.png');
-                // $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-white.png" alt="instagram"></a>');
-                //
-                // $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-white.png"></a>');
-                //
-                // $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-white.png" alt="facebook">');
-                //
-                // $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-white.png"></a>');
+                $('#github').attr('src', app.icons.white.github);
+                $('#linkedin').attr('src', app.icons.white.linkedin);
+                $('#instagram').attr('src', app.icons.white.instagram);
+                $('#email').attr('src', app.icons.white.email);
                 renderer.setClearColor(0x000000, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
@@ -170,9 +189,38 @@ $(document).ready(function() {
         if (!app.modalClicked) {
             $('#page-wrapper').addClass('modalOpen');
             var self = this;
-            console.log(self);
             var imageSrc = $(self)[0].src;
-            $('#modal').append('<img src="' + imageSrc + '">');
+            var imageName = $(self)[0].alt;
+            if (imageName == 'COLOR THEORY'){
+                var projectLink = app.projects.colorTheory.link;
+                var projectInformation = app.projects.colorTheory.information;
+                var projectTechnology = app.projects.colorTheory.technology;
+            }
+            else if (imageName == 'CAMERALESS CONCERTS'){
+                var projectLink = app.projects.cameralessConcerts.link;
+                var projectInformation = app.projects.cameralessConcerts.information;
+                var projectTechnology = app.projects.cameralessConcerts.technology;
+            }
+            else if (imageName == 'AUDIO VIZ'){
+                var projectLink = app.projects.audioViz.link;
+                var projectInformation = app.projects.audioViz.information;
+                var projectTechnology = app.projects.audioViz.technology;
+            }
+            else {
+                var projectLink = app.projects.beerCrawl.link;
+                var projectInformation = app.projects.beerCrawl.information;
+                var projectTechnology = app.projects.beerCrawl.technology;
+            }
+            $('#modal').append('<h4>' + imageName + '</h4>')
+                       .append('<a href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
+                       .append('<p>' + projectInformation + '</p>')
+                       .append('<p> Built with: ' + projectTechnology + '</p>')
+            ;
+            // $('#modal').append('<h4>'+ '<a href="'+ projectLink +'" target="_blank">' + imageName +'</a>' + '</h4>')
+            //            .append('<img src="' + imageSrc + '">')
+            //            .append('<p>' + projectInformation + '</p>')
+            //            .append('<p> Built with: ' + projectTechnology + '</p>')
+            // ;
             app.modalClicked = !app.modalClicked;
             if (app.modalClicked){
                 $('#show-projects').velocity("slideUp", { duration: 500 });
@@ -180,6 +228,10 @@ $(document).ready(function() {
                 app.projectClicked = false;
             }
         }
+    }
+
+    function displayInformation(){
+
     }
 
     function clearModal(){

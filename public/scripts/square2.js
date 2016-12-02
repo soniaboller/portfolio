@@ -100,27 +100,6 @@ $(document).ready(function() {
             return false;
         }
 
-        // function onClick(){
-        //     if (app.black) {
-        //         $('body').css('background-color', '#fff');
-        //         app.renderer.setClearColor(0xffffff, 1);
-        //         for (var i = 0; i <= particles.length; i++) {
-        //             particle = particles[i++];
-        //             particle.material.color.setHex(0x000000);
-        //         }
-        //         app.black = false
-        //     }
-        //     else {
-        //         $('body').css('background-color', '#000');
-        //         app.renderer.setClearColor(0x000000, 1);
-        //         for (var i = 0; i <= particles.length; i++) {
-        //             particle = particles[i++];
-        //             particle.material.color.setHex(0xffffff);
-        //         }
-        //         app.black = true
-        //     }
-        // }
-
         function onDocumentMouseMove(e) {
             mouseX = e.clientX - windowHalfX;
             mouseY = e.clientY - windowHalfY;
@@ -140,7 +119,7 @@ $(document).ready(function() {
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }
         }
-        // document.addEventListener('click', onClick, false);
+
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         document.addEventListener('touchstart', onDocumentTouchStart, false);
         document.addEventListener('touchmove', onDocumentTouchMove, false);

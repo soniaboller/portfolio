@@ -13,6 +13,20 @@ body {
 img {
     width: 50%;
 }
+
+a, a:active, a:hover, a:visited {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    list-style: none;
+    display: inline;
+}
+
 canvas{
     width: 100vw;
     height: 100vh;
@@ -149,21 +163,35 @@ button:focus {
     display:none;
 }
 
+#social-media img {
+    width: 15%;
+    margin: 0 3%;
+}
+
 
 // modal shit
 #modal {
+    color: #696969;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-weight: 300;
     position: fixed;
     width: 60%;
-    top: 15%;
+    top: 8%;
     left: 20%;
     transform: scale(1.5);
     opacity: 0;
     pointer-events: none;
     z-index: 1000;
 }
+#modal h4 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    margin: 2% 0;
+}
 
 #modal img{
-    width: 100%;
+    width: 95%;
     opacity: 0.95;
 }
 
@@ -208,8 +236,9 @@ and (orientation : portrait) {
         width: 95%;
     }
     #modal{
+        background-color: black;
         width: 100%;
-        left: 0;
+        left: 1%;
         top: 33%;
     }
     .about-box{
@@ -243,6 +272,7 @@ and (orientation : portrait) {
         width: 95%;
     }
     #modal{
+        background-color: black;
         width: 100%;
         left: 0;
         top: 33%;
@@ -278,6 +308,9 @@ and (orientation : portrait) {
         width: 95%;
     }
     #modal{
+        padding: 3%;
+
+        background-color: black;
         width: 100%;
         left: 0;
         top: 33%;
