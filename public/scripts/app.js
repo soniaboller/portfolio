@@ -183,6 +183,12 @@ $(document).ready(function() {
                 app.black = !app.black;
             }
         }
+        else{
+            $('#github').attr('src', app.icons.white.github);
+            $('#linkedin').attr('src', app.icons.white.linkedin);
+            $('#instagram').attr('src', app.icons.white.instagram);
+            $('#email').attr('src', app.icons.white.email);
+        }
     }
 
     function projectImageClick(){

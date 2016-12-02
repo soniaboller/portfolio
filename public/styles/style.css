@@ -7,6 +7,10 @@ body {
   background-color: #000;
   color: #696969; }
 
+div {
+  margin: 0;
+  padding: 0; }
+
 img {
   width: 50%; }
 
@@ -114,7 +118,7 @@ button:focus {
   color: #bbb;
   font-weight: 300;
   width: 25vw;
-  margin: 1% 1% 1% 0;
+  margin: 1%;
   padding: 2%;
   letter-spacing: 0.25rem;
   line-height: 2.5rem; }
@@ -193,14 +197,22 @@ button:focus {
     padding: 0; }
   img {
     width: 95%; }
+  #social-media img {
+    width: 35%;
+    margin: 0 3%; }
+  .project-image {
+    border: none;
+    border-bottom: 1px solid #555; }
   #modal {
+    padding: 3%;
     background-color: black;
     width: 100%;
-    left: 1%;
-    top: 33%; }
+    left: 0;
+    top: 23%; }
   .about-box {
+    width: 38vw;
     line-height: 1.5rem;
-    font-size: 1rem; }
+    font-size: 0.9rem; }
   #show-about {
     background: #000; }
   #show-projects {
@@ -216,14 +228,23 @@ button:focus {
     margin: 0;
     padding: 0; }
   img {
+    border: none;
     width: 95%; }
+  #social-media img {
+    width: 40%;
+    margin: 0 3%; }
+  .project-image {
+    border: none;
+    border-bottom: 1px solid #555; }
   #modal {
+    padding: 3%;
     background-color: black;
     width: 100%;
     left: 0;
-    top: 33%; }
+    top: 23%; }
   .about-box {
-    line-height: 1.5rem;
+    width: 38vw;
+    line-height: 2rem;
     font-size: 1rem; }
   #show-about {
     background: #000; }
@@ -236,19 +257,25 @@ button:focus {
     margin: 0;
     padding: 0; }
   #about-container {
-    width: 40%;
+    width: 41%;
     margin: 0;
     padding: 0; }
   img {
     width: 95%; }
+  #social-media img {
+    width: 40%;
+    margin: 0 3%; }
+  .project-image {
+    border: none;
+    border-bottom: 1px solid #555; }
   #modal {
     padding: 3%;
     background-color: black;
     width: 100%;
     left: 0;
-    top: 33%; }
+    top: 23%; }
   .about-box {
-    line-height: 1.5rem;
+    line-height: 2.25rem;
     font-size: 1rem; }
   #show-about {
     background: #000; }
