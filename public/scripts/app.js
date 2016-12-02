@@ -151,7 +151,7 @@ $(document).ready(function() {
     function changeColor(){
         var instagram = $('#instagram');
         console.log(instagram);
-        if (app.windowWidth > 960){
+        if (app.windowWidth > 800){
             if (app.black) {
                 $('body').css('backgroundColor', '#fff');
                 $('.about-box').addClass('about-box-border');
