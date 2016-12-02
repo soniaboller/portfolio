@@ -5,7 +5,7 @@ app.black = true;
 app.play = false;
 
 $(document).ready(function() {
-    console.log(app);
+    console.log(app, 'from sqare');
     var xSeparation = 1.05, ySeparation = 1.05, xNum = 45, yNum = 45,
         mouseX = 0, mouseY = 0,
         windowHalfX = window.innerWidth / 2,
@@ -69,12 +69,14 @@ $(document).ready(function() {
         function onKeyDown(e) {
             switch (e.which) {
                 case 32:
-                    if (app.play) {
-                        audio.pause();
-                        app.play = false;
-                    } else {
-                        audio.play();
-                        app.play = true;
+                    if (app.windowWidth > 780) {
+                        if (app.play) {
+                            audio.pause();
+                            app.play = false;
+                        } else {
+                            audio.play();
+                            app.play = true;
+                        }
                     }
                     break;
                 case 84:
@@ -168,12 +170,20 @@ $(document).ready(function() {
 
         function animate() {
             requestAnimationFrame(animate);
-            analyser.getByteTimeDomainData(timeFrequencyData);
-            analyser.getFloatTimeDomainData(timeFloatData);
-            for (var j = 0; j <= particles.length; j++) {
-                particle = particles[j++];
-                particle.position.z = (timeFrequencyData[j] / 10);
-                particle.material.rotation += 0.0003;
+            if(app.windowWidth < 780) {
+                for (var j = 0; j <= particles.length; j++) {
+                    particle = particles[j++];
+                    particle.material.rotation += 0.0006;
+                }
+            }
+            else {
+                analyser.getByteTimeDomainData(timeFrequencyData);
+                analyser.getFloatTimeDomainData(timeFloatData);
+                for (var j = 0; j <= particles.length; j++) {
+                    particle = particles[j++];
+                    particle.position.z = (timeFrequencyData[j] / 10);
+                    particle.material.rotation += 0.0003;
+                }
             }
             camera.position.x = ( mouseX - camera.position.x ) * 0.05;
             camera.position.y = ( -mouseY - camera.position.y ) * 0.075;

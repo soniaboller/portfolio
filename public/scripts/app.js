@@ -7,7 +7,7 @@ app.black = true;
 app.modalClicked = false;
 
 $(document).ready(function() {
-    var windowWidth;
+    app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
@@ -38,7 +38,7 @@ $(document).ready(function() {
     });
 
     function checkWindowWidth(){
-        windowWidth = $(window).width();
+        app.windowWidth = $(window).width();
     }
 
     function aboutClick(){
