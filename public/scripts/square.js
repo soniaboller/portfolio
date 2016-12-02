@@ -2,7 +2,7 @@ console.log('wave loaded');
 
 var app = app || {};
 app.black = true;
-app.play = false;
+app.play = true;
 
 $(document).ready(function() {
     console.log(app, 'from sqare');
