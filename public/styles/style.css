@@ -10,9 +10,6 @@ body {
 img {
   width: 50%; }
 
-img:hover {
-  width: 50%; }
-
 canvas {
   width: 100vw;
   height: 100vh;
@@ -46,10 +43,6 @@ button:focus {
   color: #555;
   border: 1px solid #bbb; }
 
-.about-box-border {
-  color: #555;
-  border-bottom: 1px solid #bbb; }
-
 .button-clicked:hover {
   border: 1px solid #555; }
 
@@ -62,7 +55,7 @@ button:focus {
   width: 50%;
   clear: both; }
 
-#showAbout, #showProjects {
+#show-about, #show-projects {
   display: none;
   z-index: 100;
   clear: both;
@@ -75,7 +68,7 @@ button:focus {
   position: relative;
   float: right; }
 
-#showProjects {
+#show-projects {
   float: right;
   text-align: left;
   overflow-y: scroll;
@@ -88,6 +81,9 @@ button:focus {
   border: 1px solid #555;
   padding: 1%;
   margin: 1% 0 1% 1%; }
+
+.project-image-hover {
+  border: 1px solid #bbb; }
 
 .project-box {
   float: right;
@@ -102,13 +98,23 @@ button:focus {
   float: left; }
 
 .about-box {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
   border-bottom: 1px solid #555;
   color: #bbb;
+  font-weight: 300;
   width: 25vw;
   margin: 1% 1% 1% 0;
-  padding: 2%; }
+  padding: 2%;
+  letter-spacing: 0.25rem;
+  line-height: 2.5rem; }
 
-#showAbout {
+.about-box-border {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: #000;
+  font-weight: 300;
+  border-bottom: 1px solid #bbb; }
+
+#show-about {
   float: left;
   width: 100%; }
 
@@ -116,7 +122,7 @@ button:focus {
   float: left;
   clear: both; }
 
-#interests {
+#interests, #skills {
   display: none; }
 
 #modal {
@@ -151,3 +157,72 @@ button:focus {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  #project-container {
+    width: 60%;
+    margin: 0;
+    padding: 0; }
+  #about-container {
+    width: 40%;
+    margin: 0;
+    padding: 0; }
+  img {
+    width: 95%; }
+  #modal {
+    width: 100%;
+    left: 0;
+    top: 33%; }
+  .about-box {
+    line-height: 1.5rem;
+    font-size: 1rem; }
+  #show-about {
+    background: #000; }
+  #show-projects {
+    background: #000; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  #project-container {
+    width: 60%;
+    margin: 0;
+    padding: 0; }
+  #about-container {
+    width: 40%;
+    margin: 0;
+    padding: 0; }
+  img {
+    width: 95%; }
+  #modal {
+    width: 100%;
+    left: 0;
+    top: 33%; }
+  .about-box {
+    line-height: 1.5rem;
+    font-size: 1rem; }
+  #show-about {
+    background: #000; }
+  #show-projects {
+    background: #000; } }
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  #project-container {
+    width: 60%;
+    margin: 0;
+    padding: 0; }
+  #about-container {
+    width: 40%;
+    margin: 0;
+    padding: 0; }
+  img {
+    width: 95%; }
+  #modal {
+    width: 100%;
+    left: 0;
+    top: 33%; }
+  .about-box {
+    line-height: 1.5rem;
+    font-size: 1rem; }
+  #show-about {
+    background: #000; }
+  #show-projects {
+    background: #000; } }

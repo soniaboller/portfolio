@@ -126,7 +126,6 @@ $(document).ready(function() {
 
         function onDocumentTouchStart(e) {
             if (e.touches.length === 1) {
-                e.preventDefault();
                 console.log(e.touches);
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
@@ -135,7 +134,6 @@ $(document).ready(function() {
 
         function onDocumentTouchMove(e) {
             if (e.touches.length === 1) {
-                e.preventDefault();
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }

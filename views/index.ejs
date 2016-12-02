@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title><%= title %></title>
     <link rel='stylesheet' href='/styles/style.css' />
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Lato:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,600,900|Lato:100,200,300,600,900" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600,800" rel="stylesheet">
     <script src="/scripts/jquery.min.js"></script>
     <script src="/scripts/three.min.js"></script>
     <script src="/scripts/velocity.min.js"></script>
@@ -19,7 +21,7 @@
     <!--<div id="header">-->
     <div id="project-container">
       <button id="projects-button">PROJECTS</button>
-          <div id="showProjects">
+          <div id="show-projects">
                 <div class="project-box">
                     <img class="project-image" src="/images/color-theory2.png" alt="color theory">
                     </img>
@@ -41,13 +43,18 @@
     </div>
     <div id="about-container">
     <button id="about-button">ABOUT</button>
-          <div id="showAbout">
-            <div class="about-box" id="name"></div>
-            <div class="about-box" id="information"></div>
-            <div class="about-box" id="interests">
-              I'm also into:
-              <span id="interests-list"></span>
+          <div id="show-about">
+            <div class="about-box" id="name">SONIA BOLLER</div>
+            <div class="about-box" id="information"> WEB DEVELOPER </div>
+            <div class="about-box" id="brand-statement"> BLENDING FUNCTION AND DESIGN YADA YADA YADA BRAND STATEMENT</div>
+            <div class="about-box" id="skills">
+              AVID FAN OF:
+              <span id="skills-list"></span>
             </div>
+            <!--<div class="about-box" id="interests">-->
+              <!--ALSO INTO: -->
+              <!--<span id="interests-list"></span>-->
+            <!--</div>-->
           </div>
     </div>
     <audio src="/media/thedeep.mp3"></audio>
