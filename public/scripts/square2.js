@@ -168,6 +168,7 @@ $(document).ready(function() {
         var timeFrequencyData = new Uint8Array(analyser.fftSize);
         var timeFloatData = new Float32Array(analyser.fftSize);
 
+        // remove app.windowWidth if it is possible to animate on phone without musid
         function animate() {
             requestAnimationFrame(animate);
             if(app.windowWidth < 780) {

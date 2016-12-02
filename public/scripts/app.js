@@ -111,11 +111,20 @@ $(document).ready(function() {
     }
 
     function changeColor(){
-        if (windowWidth > 414){
+        var instagram = $('#instagram');
+        console.log(instagram);
+        if (app.windowWidth > 414){
             if (app.black) {
                 $('body').css('backgroundColor', '#fff');
                 $(".about-box").addClass('about-box-border');
                 $("#about-button, #projects-button").addClass('button-clicked');
+                $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-black.png" alt="instagram"></a>');
+
+                $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-black.png"></a>');
+
+                $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-black.png" alt="facebook">');
+
+                $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-black.png"></a>');
                 // console.log(button)
                 renderer.setClearColor(0xffffff, 1);
                 for (var i = 0; i <= particles.length; i++) {
@@ -128,6 +137,13 @@ $(document).ready(function() {
                 $('body').css('backgroundColor', '#000');
                 $(".about-box").removeClass('about-box-border');
                 $("#about-button, #projects-button").removeClass('button-clicked');
+                $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-white.png" alt="instagram"></a>');
+
+                $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-white.png"></a>');
+
+                $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-white.png" alt="facebook">');
+
+                $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-white.png"></a>');
                 renderer.setClearColor(0x000000, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
