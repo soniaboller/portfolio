@@ -7,6 +7,8 @@ app.black = true;
 app.modalClicked = false;
 
 $(document).ready(function() {
+    var insta = $('#instagram');
+    console.log(insta);
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
     $('#about-button').on('click', aboutClick);
@@ -98,11 +100,11 @@ $(document).ready(function() {
     function projectClick(){
         changeColor();
         if (!app.projectClicked){
-            $('#show-projects').velocity("slideDown", { duration: 1000 });
+            $('#show-projects').velocity('slideDown', { duration: 1000 });
             app.projectClicked = !app.projectClicked;
         }
         else{
-            $('#show-projects').velocity("slideUp", { duration: 1000 });
+            $('#show-projects').velocity('slideUp', { duration: 1000 });
             app.projectClicked = !app.projectClicked;
         }
         if (app.modalClicked){
@@ -116,15 +118,20 @@ $(document).ready(function() {
         if (app.windowWidth > 414){
             if (app.black) {
                 $('body').css('backgroundColor', '#fff');
-                $(".about-box").addClass('about-box-border');
-                $("#about-button, #projects-button").addClass('button-clicked');
-                $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-black.png" alt="instagram"></a>');
+                $('.about-box').addClass('about-box-border');
+                $('#about-button, #projects-button').addClass('button-clicked');
+                $('#instagram').attr('src','/images/social-media/instagram-black.png');
+                $('#github').attr('src','/images/social-media/github-black.png');
+                $('#facebook').attr('src','/images/social-media/facebook-black.png');
+                $('#linkedin').attr('src','/images/social-media/linkedin-black.png');
 
-                $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-black.png"></a>');
+                // $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-black.png" alt="instagram"></a>');
 
-                $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-black.png" alt="facebook">');
-
-                $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-black.png"></a>');
+                // $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-black.png"></a>');
+                //
+                // $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-black.png" alt="facebook">');
+                //
+                // $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-black.png"></a>');
                 // console.log(button)
                 renderer.setClearColor(0xffffff, 1);
                 for (var i = 0; i <= particles.length; i++) {
@@ -135,15 +142,20 @@ $(document).ready(function() {
             }
             else {
                 $('body').css('backgroundColor', '#000');
-                $(".about-box").removeClass('about-box-border');
-                $("#about-button, #projects-button").removeClass('button-clicked');
-                $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-white.png" alt="instagram"></a>');
+                $('.about-box').removeClass('about-box-border');
+                $('#about-button, #projects-button').removeClass('button-clicked');
 
-                $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-white.png"></a>');
-
-                $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-white.png" alt="facebook">');
-
-                $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-white.png"></a>');
+                $('#instagram').attr('src','/images/social-media/instagram-white.png');
+                $('#github').attr('src','/images/social-media/github-white.png');
+                $('#facebook').attr('src','/images/social-media/facebook-white.png');
+                $('#linkedin').attr('src','/images/social-media/linkedin-white.png');
+                // $('#instagram').html('<a href="https://www.instagram.com/sboller/" target="_blank"><img class="social-icon" src="/images/social-media/instagram-white.png" alt="instagram"></a>');
+                //
+                // $('#github').html('<a href="https://github.com/soniaboller" target="_blank"><img class="social-icon" src="/images/social-media/github-white.png"></a>');
+                //
+                // $('#facbeook').html('<a href="https://www.facebook.com/profile.php?id=641476933" target="_blank"><img class="social-icon" src="/images/social-media/facebook-white.png" alt="facebook">');
+                //
+                // $('#linkedin').html('<a href="https://www.linkedin.com/in/sboller" target="_blank"><img class="social-icon" src="/images/social-media/linkedin-white.png"></a>');
                 renderer.setClearColor(0x000000, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
