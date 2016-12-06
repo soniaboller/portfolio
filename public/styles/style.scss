@@ -229,6 +229,9 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
     #project-container{
+        position: fixed;
+        float:right;
+        right: 0;
         width: 60%;
         margin: 0;
         padding: 0;
@@ -254,7 +257,7 @@ and (orientation : portrait) {
         background-color: black;
         width: 100%;
         left: 0;
-        top: 21%;
+        top: 18%;
     }
     .about-box{
         width: 38vw;
@@ -275,6 +278,9 @@ and (min-device-width : 375px)
 and (max-device-width : 667px)
 and (orientation : portrait) {
     #project-container{
+        position: fixed;
+        float:right;
+        right: 0;
         width: 60%;
         margin: 0;
         padding: 0;
@@ -301,7 +307,7 @@ and (orientation : portrait) {
         background-color: black;
         width: 100%;
         left: 0;
-        top: 22%;
+        top: 18%;
     }
     .about-box{
         width: 38vw;
@@ -322,6 +328,9 @@ and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : portrait) {
     #project-container{
+        position: fixed;
+        float:right;
+        right: 0;
         width: 60%;
         margin: 0;
         padding: 0;
@@ -347,7 +356,7 @@ and (orientation : portrait) {
         background-color: black;
         width: 100%;
         left: 0;
-        top: 23%;
+        top: 18%;
     }
     .about-box{
         line-height: 2.25rem;
