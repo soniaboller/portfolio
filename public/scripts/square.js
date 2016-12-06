@@ -108,6 +108,7 @@ $(document).ready(function() {
         function onDocumentTouchStart(e) {
             if (e.touches.length === 1) {
                 app.audio.play();
+                console.log('playing')
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }
@@ -130,6 +131,7 @@ $(document).ready(function() {
         console.log(ctx);
 
         var audio = document.querySelector('audio');
+        app.audio = audio;
         console.log('audio');
         console.log(audio);
 
