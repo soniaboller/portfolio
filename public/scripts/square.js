@@ -144,27 +144,24 @@ $(document).ready(function() {
         audioSrc.connect(analyser);
         analyser.connect(ctx.destination);
 
-        var timeFrequencyData = new Uint8Array(analyser.fftSize);
-        var timeFloatData = new Float32Array(analyser.fftSize);
-
         // remove app.windowWidth if it is possible to animate on phone without musid
         function animate() {
+            var timeFrequencyData = new Uint8Array(analyser.fftSize);
             requestAnimationFrame(animate);
-            // if(app.windowWidth < 780) {
-            //     for (var j = 0; j <= particles.length; j++) {
-            //         particle = particles[j++];
-            //         particle.material.rotation += 0.0006;
-            //     }
-            // }
-            // else {
+            if(app.windowWidth < 780) {
+                for (var j = 0; j <= particles.length; j++) {
+                    particle = particles[j++];
+                    particle.material.rotation += 0.0008;
+                }
+            }
+            else {
                 analyser.getByteTimeDomainData(timeFrequencyData);
-                analyser.getFloatTimeDomainData(timeFloatData);
                 for (var j = 0; j <= particles.length; j++) {
                     particle = particles[j++];
                     particle.position.z = (timeFrequencyData[j] / 10);
                     particle.material.rotation += 0.0003;
                 }
-            // }
+            }
             camera.position.x = ( mouseX - camera.position.x ) * 0.05;
             camera.position.y = ( -mouseY - camera.position.y ) * 0.075;
             camera.lookAt(scene.position);

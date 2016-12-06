@@ -140,8 +140,8 @@ button:focus {
     color: #bbb;
     font-weight: 300;
     width: 25vw;
-    margin: 1%;
-    padding: 2%;
+    margin: 1% 1% 1% 0;
+    padding: 2% 2% 2% 0;
     letter-spacing: 0.25rem;
     line-height: 2.5rem;
 }
@@ -359,12 +359,13 @@ and (orientation : portrait) {
     }
 }
 
-@media (min-width:960px)  {
+// other media
+@media (max-width:960px) {
     #project-container{
-    width: 60%;
-    margin: 0;
-    padding: 0;
-}
+        width: 60%;
+        margin: 0;
+        padding: 0;
+    }
     #about-container{
         width: 41%;
         margin: 0;
@@ -374,7 +375,7 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 40%;
+        width: 15%;
         margin: 0 3%;
     }
     .project-image {
@@ -391,6 +392,49 @@ and (orientation : portrait) {
     .about-box{
         line-height: 2.25rem;
         font-size: 1rem;
+        color: #bbb;
+    }
+    #show-about{
+        background: #000;
+    }
+    #show-projects{
+        background: #000;
+    }
+}
+
+@media (max-width:960px) {
+    #project-container{
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+    #about-container{
+        width: 41%;
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        width: 95%;
+    }
+    #social-media img {
+        width: 15%;
+        margin: 0 3%;
+    }
+    .project-image {
+        border:none;
+        border-bottom: 1px solid #555;
+    }
+    #modal{
+        padding: 3%;
+        background-color: black;
+        width: 100%;
+        left: 0;
+        top: 23%;
+    }
+    .about-box{
+        line-height: 2.25rem;
+        font-size: 1rem;
+        color: #bbb;
     }
     #show-about{
         background: #000;
