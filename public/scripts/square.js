@@ -5,7 +5,7 @@ app.black = true;
 app.play = true;
 
 $(document).ready(function() {
-    console.log(app, 'from sqare');
+    console.log(app, 'from square');
     var xSeparation = 1.05, ySeparation = 1.05, xNum = 45, yNum = 45,
         mouseX = 0, mouseY = 0,
         windowHalfX = window.innerWidth / 2,
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
         function onDocumentTouchStart(e) {
             if (e.touches.length === 1) {
-                console.log(e.touches);
+                app.audio.play();
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }

@@ -47,7 +47,7 @@ $(document).ready(function() {
     console.log(insta);
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
-    $('#modal').on('mouseover', displayInformation)
+    $('#modal').on('mouseover', displayInformation);
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
     $('.project-image').on('click', projectImageClick)
