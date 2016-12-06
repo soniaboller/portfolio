@@ -155,7 +155,7 @@ $(document).ready(function() {
             if(app.windowWidth < 780) {
                 for (var j = 0; j <= particles.length; j++) {
                     particle = particles[j++];
-                    particle.position.z = (timeFrequencyData[j] / 10);
+                    particle.position.z = (timeFrequencyData[j]);
                     particle.material.rotation += 0.0006;
                 }
             }
