@@ -107,8 +107,6 @@ $(document).ready(function() {
 
         function onDocumentTouchStart(e) {
             if (e.touches.length === 1) {
-                app.audio.play();
-                console.log('playing');
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }
@@ -155,8 +153,7 @@ $(document).ready(function() {
             if(app.windowWidth < 780) {
                 for (var j = 0; j <= particles.length; j++) {
                     particle = particles[j++];
-                    particle.position.z = (timeFrequencyData[j]);
-                    particle.material.rotation += 0.0006;
+                    particle.material.rotation += 0.0008;
                 }
             }
             else {
