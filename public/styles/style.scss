@@ -125,7 +125,7 @@ button:focus {
 }
 
 #projects-button{
-    position:fixed;
+    position:relative;
     float:right;
     clear:both;
 }
@@ -372,9 +372,12 @@ and (orientation : portrait) {
 
 @media (min-width:960px)  {
     #project-container{
-    width: 60%;
-    margin: 0;
-    padding: 0;
+        position: fixed;
+        float:right;
+        right: 0;
+        width: 60%;
+        margin: 0;
+        padding: 0;
     }
     #about-container{
         width: 41%;
