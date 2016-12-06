@@ -22,8 +22,8 @@ app.projects = {
         technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
     },
     audioViz: {
-        link: 'https://github.com/soniaboller/three-js-experiments',
-        information: 'Drag a song from your computer, see visualzation on screen.',
+        link: 'http://104.131.102.98/',
+        information: 'Drag a song from your computer, see visualization on screen.',
         technology: 'THREE.js, Web Audio API, Node / Express'
     }
 };
