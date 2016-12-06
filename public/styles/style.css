@@ -167,7 +167,7 @@ button:focus {
 
 #modal img {
   width: 95%;
-  opacity: 0.95; }
+  opacity: 0.97; }
 
 .modalOpen #page-wrapper {
   -webkit-filter: blur(4px) grayscale(50%);
