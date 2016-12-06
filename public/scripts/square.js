@@ -5,7 +5,7 @@ app.black = true;
 app.play = true;
 
 $(document).ready(function() {
-    console.log(app, 'from sqare');
+    console.log(app, 'from square');
     var xSeparation = 1.05, ySeparation = 1.05, xNum = 45, yNum = 45,
         mouseX = 0, mouseY = 0,
         windowHalfX = window.innerWidth / 2,
@@ -107,7 +107,6 @@ $(document).ready(function() {
 
         function onDocumentTouchStart(e) {
             if (e.touches.length === 1) {
-                console.log(e.touches);
                 mouseX = e.touches[0].pageX - (windowHalfX - 10);
                 mouseY = e.touches[0].pageY - (windowHalfY - 10);
             }
@@ -130,6 +129,7 @@ $(document).ready(function() {
         console.log(ctx);
 
         var audio = document.querySelector('audio');
+        app.audio = audio;
         console.log('audio');
         console.log(audio);
 
@@ -144,9 +144,10 @@ $(document).ready(function() {
         audioSrc.connect(analyser);
         analyser.connect(ctx.destination);
 
-        // remove app.windowWidth if it is possible to animate on phone without musid
+        // remove app.windowWidth if it is possible to animate on phone without music
         function animate() {
             var timeFrequencyData = new Uint8Array(analyser.fftSize);
+            analyser.getByteTimeDomainData(timeFrequencyData);
             requestAnimationFrame(animate);
             if(app.windowWidth < 780) {
                 for (var j = 0; j <= particles.length; j++) {
@@ -155,7 +156,6 @@ $(document).ready(function() {
                 }
             }
             else {
-                analyser.getByteTimeDomainData(timeFrequencyData);
                 for (var j = 0; j <= particles.length; j++) {
                     particle = particles[j++];
                     particle.position.z = (timeFrequencyData[j] / 10);
