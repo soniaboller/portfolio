@@ -43,7 +43,7 @@ button {
     padding: 0 30px;
     color: #bbb;
     text-align: center;
-    font-size: 11px;
+    font-size: 0.8rem;
     font-weight: 100;
     line-height: 38px;
     letter-spacing: .25rem;
@@ -54,6 +54,7 @@ button {
     border: 1px solid #555;
     cursor: pointer;
     box-sizing: border-box;
+    z-index: 500;
 }
 
 button:hover {
@@ -79,7 +80,7 @@ button:focus {
 
 #about-container, #project-container {
     margin: 1%;
-    z-index: 100;
+    z-index: 1;
     width: 50%;
     clear:both;
 }
@@ -191,14 +192,14 @@ button:focus {
 }
 #modal h4 {
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     letter-spacing: 0.5rem;
     margin: 2% 0;
 }
 
 #modal img{
     width: 95%;
-    opacity: 0.95;
+    opacity: 1;
 }
 
 .modalOpen #page-wrapper {
@@ -213,7 +214,7 @@ button:focus {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
-    opacity: 1;
+    opacity: 0.99;
     pointer-events: auto;
 }
 
@@ -262,9 +263,11 @@ button:focus {
     }
     #show-about{
         background: #000;
+        width: 100vw;
     }
     #show-projects{
         background: #000;
+        width: 100vw;
     }
 }
 
@@ -274,6 +277,15 @@ button:focus {
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
+    button{
+        color: #fff;
+        font-weight: 300;
+        margin: 2%;
+        border: 1px solid #fff;
+    }
+    button:hover{
+        border: 1px solid #fff;
+    }
     #project-container{
         position: fixed;
         float:right;
@@ -291,7 +303,7 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 35%;
+        width: 15%;
         margin: 0 3%;
     }
     .project-image {
@@ -306,15 +318,20 @@ and (orientation : portrait) {
         top: 18%;
     }
     .about-box{
-        width: 38vw;
-        line-height: 1.5rem;
         font-size: 0.9rem;
+        width: 97vw;
+        margin: 2%;
+        overflow-x: hidden;
+        text-align: center;
+        color: #fff;
     }
     #show-about{
         background: #000;
+        width: 100vw;
     }
     #show-projects{
         background: #000;
+        width: 100vw;
     }
 }
 
@@ -323,6 +340,15 @@ and (orientation : portrait) {
 and (min-device-width : 375px)
 and (max-device-width : 667px)
 and (orientation : portrait) {
+    button{
+        color: #fff;
+        font-weight: 300;
+        margin: 2%;
+        border: 1px solid #fff;
+    }
+    button:hover{
+        border: 1px solid #fff;
+    }
     #project-container{
         position: fixed;
         float:right;
@@ -341,7 +367,7 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 40%;
+        width: 15%;
         margin: 0 3%;
     }
     .project-image {
@@ -356,15 +382,21 @@ and (orientation : portrait) {
         top: 18%;
     }
     .about-box{
-        width: 38vw;
-        line-height: 2rem;
+        line-height: 3rem;
         font-size: 1rem;
+        width: 97vw;
+        margin: 2%;
+        overflow-x: hidden;
+        text-align: center;
+        color: #fff;
     }
     #show-about{
         background: #000;
+        width: 100vw;
     }
     #show-projects{
         background: #000;
+        width: 100vw;
     }
 }
 
@@ -373,16 +405,25 @@ and (orientation : portrait) {
 and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : portrait) {
+    button{
+        color: #fff;
+        font-weight: 300;
+        margin: 2%;
+        border: 1px solid #fff;
+    }
+    button:hover{
+        border: 1px solid #fff;
+    }
     #project-container{
         position: fixed;
         float:right;
         right: 0;
-        width: 60%;
+        width: 50%;
         margin: 0;
         padding: 0;
     }
     #about-container{
-        width: 41%;
+        width: 50%;
         margin: 0;
         padding: 0;
     }
@@ -390,12 +431,13 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 40%;
+        width: 15%;
         margin: 0 3%;
     }
     .project-image {
         border:none;
         border-bottom: 1px solid #555;
+        margin: 1% 1.5%;
     }
     #modal{
         padding: 3%;
@@ -405,13 +447,20 @@ and (orientation : portrait) {
         top: 18%;
     }
     .about-box{
-        line-height: 2.25rem;
+        line-height: 3.5rem;
         font-size: 1rem;
+        margin: 2%;
+        width: 97vw;
+        overflow-x: hidden;
+        text-align: center;
+        color: #fff;
     }
     #show-about{
         background: #000;
+        width: 100vw;
     }
     #show-projects{
         background: #000;
+        width: 100vw;
     }
 }

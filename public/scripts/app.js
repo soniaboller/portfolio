@@ -21,10 +21,15 @@ app.projects = {
         information: 'Create a user. Join a team. Join an event as a team. Go on a beer crawl scavenger hunt.',
         technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
     },
-    audioViz: {
+    audibleVisuals: {
         link: 'http://104.131.102.98/',
         information: 'Drag a song from your computer, see visualization on screen.',
         technology: 'THREE.js, Web Audio API, Node / Express'
+    },
+    ticTacToe: {
+        link: 'https://soniaboller.github.io/tictactoe',
+        information: 'Presidential candidate themed game of tic-tac-toe',
+        technology: 'HTML5, CSS, and jQuery'
     }
 };
 app.icons = {
@@ -43,11 +48,8 @@ app.icons = {
 };
 
 $(document).ready(function() {
-    var insta = $('#instagram');
-    console.log(insta);
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
-    $('#modal').on('mouseover', displayInformation);
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
     $('.project-image').on('click', projectImageClick)
@@ -84,31 +86,13 @@ $(document).ready(function() {
         changeColor();
         if (app.modalClicked) clearModal();
         if (!app.aboutClicked){
-            $('#show-about').velocity('fadeIn', { duration: 1000 });
-            // $('#name').typed({
-            //     strings: ["Hellooooo! Dis be Sonia Boller."],
-            //     typeSpeed: -50,
-            //     startDelay: 0,
-            //     showCursor: false
-            // });
-            // $('#information').typed({
-            //     strings: ["I'm a web developer, yada yada yada, <br> hire me and I'll do cool shit."],
-            //     typeSpeed: -50,
-            //     startDelay: 0,
-            //     showCursor: false,
-            //     callback: function() {
-            //         $('#interests').velocity('fadeIn', { duration: 500});
-            //         $('#interests-list').typed({
-            //             strings: ['tacos','hiking','hiking with tacos','puppies','the ocean','curly fries','bon iver'],
-            //             typeSpeed: 0,
-            //             startDelay: 0,
-            //             backDelay: 500,
-            //             loop: true,
-            //             showCursor: false
-            //         });
-            //     }
-            // });
-            $('#skills').velocity('fadeIn', { delay: 1000, duration: 1000});
+            if(app.windowWidth < 415){
+                $('#show-about').velocity('fadeIn', { duration: 1000 });
+            }
+            else {
+                $('#show-about').velocity('slideDown', { duration: 1000 });
+            }
+            $('#skills').velocity('fadeIn', { delay: 750, duration: 750});
             $('#skills-list').typed({
                 strings: [' THREE.js',' Web Audio API',' React',' Node / Express',' Ruby / Sinatra', ' MySQL'],
                 typeSpeed: 10,
@@ -117,35 +101,48 @@ $(document).ready(function() {
                 loop: true,
                 showCursor: false
             });
-            // $('#interests').velocity('fadeIn', { delay: 3000, duration: 1000});
-            // $('#interests-list').typed({
-            //     strings: ['HIKING','BON IVER','TACOS','PHOTOGRAPHY','TREES','PUPPIES','TEA'],
-            //     typeSpeed: 0,
-            //     startDelay: 0,
-            //     backDelay: 500,
-            //     loop: true,
-            //     showCursor: false
-            // });
-            app.aboutClicked = !app.aboutClicked;
         }
-        else{
-            $('#show-about').velocity('slideUp', { duration: 500 });
+        else {
+            if (app.windowWidth < 415){
+                $('#show-about').velocity('fadeOut', { duration: 1000 });
+            }
+            else {
+                $('#show-about').velocity('slideUp', { duration: 500 });
+            }
             $('#skills').velocity('fadeOut', { duration: 150});
-            app.aboutClicked = !app.aboutClicked;
         }
+        if (app.projectClicked && app.windowWidth < 415){
+            $('#show-projects').velocity('fadeOut', { duration: 1000 });
+            app.projectClicked = !app.projectClicked;
+        }
+        app.aboutClicked = !app.aboutClicked;
     }
 
     function projectClick(){
         changeColor();
+        console.log('clicked');
         if (app.modalClicked) clearModal();
         if (!app.projectClicked){
-            $('#show-projects').velocity('slideDown', { duration: 1000 });
-            app.projectClicked = !app.projectClicked;
+            if(app.windowWidth < 415){
+                $('#show-projects').velocity('fadeIn', { duration: 1000 });
+            }
+            else {
+                $('#show-projects').velocity('slideDown', { duration: 1000 });
+            }
         }
         else{
-            $('#show-projects').velocity('slideUp', { duration: 1000 });
-            app.projectClicked = !app.projectClicked;
+            if (app.windowWidth < 415){
+                $('#show-projects').velocity('fadeOut', { duration: 1000 });
+            }
+            else {
+                $('#show-projects').velocity('slideUp', { duration: 500 });
+            }
         }
+        if(app.aboutClicked && app.windowWidth < 415){
+            $('#show-about').velocity('fadeOut', { duration: 1000 });
+            app.aboutClicked = !app.aboutClicked;
+        }
+        app.projectClicked = !app.projectClicked;
     }
 
     function changeColor(){
@@ -193,6 +190,8 @@ $(document).ready(function() {
 
     function projectImageClick(){
         if (!app.modalClicked) {
+            var backgroundColor = $('body')[0].style.backgroundColor;
+            $('#modal').css('backgroundColor', backgroundColor)
             $('#page-wrapper').addClass('modalOpen');
             var self = this;
             var imageSrc = $(self)[0].src;
@@ -207,26 +206,25 @@ $(document).ready(function() {
                 var projectInformation = app.projects.cameralessConcerts.information;
                 var projectTechnology = app.projects.cameralessConcerts.technology;
             }
-            else if (imageName == 'AUDIO VIZ'){
-                var projectLink = app.projects.audioViz.link;
-                var projectInformation = app.projects.audioViz.information;
-                var projectTechnology = app.projects.audioViz.technology;
+            else if (imageName == 'AUDIBLE VISUALS'){
+                var projectLink = app.projects.audibleVisuals.link;
+                var projectInformation = app.projects.audibleVisuals.information;
+                var projectTechnology = app.projects.audibleVisuals.technology;
+            }
+            else if (imageName == 'TIC TAC NOPE'){
+                var projectLink = app.projects.ticTacToe.link;
+                var projectInformation = app.projects.ticTacToe.information;
+                var projectTechnology = app.projects.ticTacToe.technology;
             }
             else {
-                var projectLink = app.projects.beerCrawl.link;
-                var projectInformation = app.projects.beerCrawl.information;
-                var projectTechnology = app.projects.beerCrawl.technology;
+                var projectLink = app.projects.audibleVisuals.link;
+                var projectInformation = app.projects.audibleVisuals.information;
+                var projectTechnology = app.projects.audibleVisuals.technology;
             }
             $('#modal').append('<h4>' + imageName + '</h4>')
                        .append('<a href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
                        .append('<p>' + projectInformation + '</p>')
-                       .append('<p> Built with: ' + projectTechnology + '</p>')
-            ;
-            // $('#modal').append('<h4>'+ '<a href="'+ projectLink +'" target="_blank">' + imageName +'</a>' + '</h4>')
-            //            .append('<img src="' + imageSrc + '">')
-            //            .append('<p>' + projectInformation + '</p>')
-            //            .append('<p> Built with: ' + projectTechnology + '</p>')
-            // ;
+                       .append('<p> Built with: ' + projectTechnology + '</p>');
             app.modalClicked = !app.modalClicked;
             if (app.modalClicked){
                 $('#show-projects').velocity("slideUp", { duration: 500 });
@@ -234,10 +232,6 @@ $(document).ready(function() {
                 app.projectClicked = false;
             }
         }
-    }
-
-    function displayInformation(){
-
     }
 
     function clearModal(){
@@ -249,4 +243,6 @@ $(document).ready(function() {
     $(document).on('click', function(){
         console.log(app)
     });
+    var audio = $('audio')[0];
+    audio.volume = 0.5;
 });
