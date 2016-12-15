@@ -28,7 +28,7 @@ app.projects = {
     },
     ticTacToe: {
         link: 'https://soniaboller.github.io/tictactoe',
-        information: 'Presidential candidate themed game of tic-tac-toe',
+        information: 'Presidential candidate themed version of tic-tac-toe',
         technology: 'HTML5, CSS, and jQuery'
     }
 };
