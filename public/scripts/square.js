@@ -120,6 +120,7 @@ $(document).ready(function() {
         var audioSrc = ctx.createMediaElementSource(audio);
         var analyser = ctx.createAnalyser();
         app.audio = audio;
+        app.audio.volume = 0.25;
 
         audioSrc.connect(analyser);
         analyser.connect(ctx.destination);

@@ -236,6 +236,6 @@ $(document).ready(function() {
         app.modalClicked = !app.modalClicked;
     }
 
-    var audio = $('audio')[0];
-    audio.volume = 0.33;
+    // var audio = $('audio')[0];
+    // audio.volume = 0.33;
 });
