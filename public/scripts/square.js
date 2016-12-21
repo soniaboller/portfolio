@@ -1,11 +1,9 @@
-console.log('wave loaded');
-
 var app = app || {};
 app.black = true;
 app.play = true;
 
 $(document).ready(function() {
-    console.log(app, 'from square');
+    // console.log(app, 'from square');
     var xSeparation = 1.05, ySeparation = 1.05, xNum = 45, yNum = 45,
         mouseX = 0, mouseY = 0,
         windowHalfX = window.innerWidth / 2,
@@ -50,13 +48,6 @@ $(document).ready(function() {
         for (var iy = 0; iy < yNum; iy++) {
             var material = new THREE.SpriteMaterial({
                 color: 0xffffff
-                // program: function ( context ) {
-                //
-                //     context.beginPath();
-                //     context.arc( 0, 0, 0.25, 0, PI2, true );
-                //     context.fill();
-                //
-                // }
             });
             for (var ix = 0; ix < xNum; ix++) {
                 var particle = particles[i++] = new THREE.Particle(material);
@@ -125,26 +116,14 @@ $(document).ready(function() {
         document.addEventListener('keydown', onKeyDown, false);
 
         var ctx = new (window.AudioContext || window.webkitAudioContext)();
-        console.log('audioCtx');
-        console.log(ctx);
-
         var audio = document.querySelector('audio');
-        app.audio = audio;
-        console.log('audio');
-        console.log(audio);
-
         var audioSrc = ctx.createMediaElementSource(audio);
-        console.log(audioSrc);
-
         var analyser = ctx.createAnalyser();
-        // analyser.smoothingTimeConstant = 1;
-        console.log('analyser');
-        console.log(analyser);
+        app.audio = audio;
 
         audioSrc.connect(analyser);
         analyser.connect(ctx.destination);
 
-        // remove app.windowWidth if it is possible to animate on phone without music
         function animate() {
             var timeFrequencyData = new Uint8Array(analyser.fftSize);
             analyser.getByteTimeDomainData(timeFrequencyData);

@@ -1,5 +1,3 @@
-console.log('app connected');
-
 var app = app || {};
 app.aboutClicked = false;
 app.projectClicked = false;
@@ -120,7 +118,6 @@ $(document).ready(function() {
 
     function projectClick(){
         changeColor();
-        console.log('clicked');
         if (app.modalClicked) clearModal();
         if (!app.projectClicked){
             if(app.windowWidth < 415){
@@ -147,7 +144,6 @@ $(document).ready(function() {
 
     function changeColor(){
         var instagram = $('#instagram');
-        console.log(instagram);
         if (app.windowWidth >= 960){
             if (app.black) {
                 $('body').css('backgroundColor', '#fff');
@@ -240,9 +236,6 @@ $(document).ready(function() {
         app.modalClicked = !app.modalClicked;
     }
 
-    $(document).on('click', function(){
-        console.log(app)
-    });
     var audio = $('audio')[0];
-    audio.volume = 0.5;
+    audio.volume = 0.33;
 });
