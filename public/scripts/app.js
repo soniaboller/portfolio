@@ -20,7 +20,7 @@ app.projects = {
         technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
     },
     audibleVisuals: {
-        link: 'http://104.131.102.98/',
+        link: 'https://soniaboller.github.io/audible-visuals/',
         information: 'Drag a song from your computer, see visualization on screen.',
         technology: 'THREE.js, Web Audio API, Node / Express'
     },
