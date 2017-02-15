@@ -62,10 +62,10 @@ $(document).ready(function() {
                 case 32:
                     if (app.windowWidth > 780) {
                         if (app.play) {
-                            audio.pause();
+                            app.audio.pause();
                             app.play = false;
                         } else {
-                            audio.play();
+                            app.audio.play();
                             app.play = true;
                         }
                     }

@@ -3,6 +3,7 @@ app.aboutClicked = false;
 app.projectClicked = false;
 app.black = true;
 app.modalClicked = false;
+app.audio = $('#audio');
 app.projects = {
     colorTheory: {
         link: 'https://soniaboller.github.io/color-theory/',
@@ -52,6 +53,7 @@ $(document).ready(function() {
     $(window).on('resize',checkWindowWidth);
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
+    $('#pause-button').on('click', playPause);
     $('.project-image').on('click', projectImageClick)
         .on('mouseenter', function(){
         var self = this;
@@ -191,7 +193,7 @@ $(document).ready(function() {
     function projectImageClick(){
         if (!app.modalClicked) {
             var backgroundColor = $('body')[0].style.backgroundColor;
-            $('#modal').css('backgroundColor', backgroundColor)
+            $('#modal').css('backgroundColor', backgroundColor);
             $('#page-wrapper').addClass('modalOpen');
             var self = this;
             var imageSrc = $(self)[0].src;
@@ -238,6 +240,17 @@ $(document).ready(function() {
         $('#page-wrapper').removeClass('modalOpen');
         $('#modal').empty();
         app.modalClicked = !app.modalClicked;
+    }
+
+    function playPause(){
+        console.log('clicked');
+        if (app.play) {
+            app.audio.pause();
+            app.play = false;
+        } else {
+            app.audio.play();
+            app.play = true;
+        }
     }
 
     // var audio = $('audio')[0];

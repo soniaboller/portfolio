@@ -37,7 +37,7 @@ button {
   color: #bbb;
   text-align: center;
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 38px;
   letter-spacing: .25rem;
   text-transform: uppercase;
@@ -146,6 +146,15 @@ button:focus {
 #social-media img {
   width: 15%;
   margin: 0 3%; }
+
+#pause-button {
+  width: 5%;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100;
+  padding: 1%;
+  cursor: pointer; }
 
 #modal {
   color: #696969;
@@ -346,14 +355,6 @@ button:focus {
   #social-media img {
     width: 15%;
     margin: 0 3%; }
-  #pause img {
-    width: 2%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    padding: 5%;
-    margin: 0; }
   .project-image {
     border: none;
     border-bottom: 1px solid #555;
