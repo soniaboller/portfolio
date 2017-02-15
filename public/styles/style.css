@@ -346,6 +346,14 @@ button:focus {
   #social-media img {
     width: 15%;
     margin: 0 3%; }
+  #pause img {
+    width: 2%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 5%;
+    margin: 0; }
   .project-image {
     border: none;
     border-bottom: 1px solid #555;

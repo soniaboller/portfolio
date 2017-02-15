@@ -35,13 +35,15 @@ app.icons = {
         github: '/images/social-media/github-black.png',
         linkedin: '/images/social-media/linkedin-black.png',
         instagram: '/images/social-media/instagram-black.png',
-        email: '/images/social-media/mail-black.png'
+        email: '/images/social-media/mail-black.png',
+        pause: '/images/social-media/pause-black.png'
     },
     white: {
         github: '/images/social-media/github-white.png',
         linkedin: '/images/social-media/linkedin-white.png',
         instagram: '/images/social-media/instagram-white.png',
-        email: '/images/social-media/mail-white.png'
+        email: '/images/social-media/mail-white.png',
+        pause: '/images/social-media/pause-white.png'
     }
 };
 
@@ -153,6 +155,7 @@ $(document).ready(function() {
                 $('#linkedin').attr('src', app.icons.black.linkedin);
                 $('#instagram').attr('src', app.icons.black.instagram);
                 $('#email').attr('src', app.icons.black.email);
+                $('#pause').attr('src', app.icons.black.pause);
                 renderer.setClearColor(0xffffff, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
@@ -168,6 +171,7 @@ $(document).ready(function() {
                 $('#linkedin').attr('src', app.icons.white.linkedin);
                 $('#instagram').attr('src', app.icons.white.instagram);
                 $('#email').attr('src', app.icons.white.email);
+                $('#pause').attr('src', app.icons.white.pause);
                 renderer.setClearColor(0x000000, 1);
                 for (var i = 0; i <= particles.length; i++) {
                     particle = particles[i++];
