@@ -22,7 +22,7 @@ app.projects = {
     },
     audibleVisuals: {
         link: 'https://soniaboller.github.io/audible-visuals/',
-        information: 'Drag a song from your computer, see visualization on screen.',
+        information: 'Drag a song from your computer, see visualization on screen. \n <em> ~ Featured on <a href="https://www.chromeexperiments.com/experiment/audible-visuals" target="_blank">Chrome Experiments</a> ~',
         technology: 'THREE.js, Web Audio API, WebGL, Canvas'
     },
     ticTacToe: {

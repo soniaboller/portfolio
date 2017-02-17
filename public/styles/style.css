@@ -15,7 +15,8 @@ img {
   width: 50%; }
 
 a, a:active, a:hover, a:visited {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #ff00ff; }
 
 ul {
   padding: 0;
