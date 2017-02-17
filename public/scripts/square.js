@@ -138,7 +138,7 @@ $(document).ready(function() {
             else {
                 for (var j = 0; j <= particles.length; j++) {
                     particle = particles[j++];
-                    particle.position.z = (timeFrequencyData[j] / 10);
+                    particle.position.z = (timeFrequencyData[j] / 7);
                     particle.material.rotation += 0.0003;
                 }
             }

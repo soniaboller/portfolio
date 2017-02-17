@@ -23,12 +23,22 @@ app.projects = {
     audibleVisuals: {
         link: 'https://soniaboller.github.io/audible-visuals/',
         information: 'Drag a song from your computer, see visualization on screen.',
-        technology: 'THREE.js, Web Audio API, Node / Express'
+        technology: 'THREE.js, Web Audio API, WebGL, Canvas'
     },
     ticTacToe: {
         link: 'https://soniaboller.github.io/tictactoe',
-        information: 'Presidential candidate themed version of tic-tac-toe',
+        information: 'Presidential candidate themed version of tic-tac-toe.',
         technology: 'HTML5, CSS, and jQuery'
+    },
+    visualizerExperiments: {
+        link: 'http://104.131.102.98/',
+        information: 'Various experiments with audio visualizers.',
+        technology: 'THREE.js, Web Audio API, Node / Express'
+    },
+    chooseAdventure: {
+        link: 'https://soniaboller.github.io/choose-your-own-adventure/',
+        information: 'Simple choose your own adventure game prototype.',
+        technology: 'HTML5, Skeleton, JavaScript'
     }
 };
 app.icons = {
@@ -218,6 +228,21 @@ $(document).ready(function() {
                 var projectInformation = app.projects.ticTacToe.information;
                 var projectTechnology = app.projects.ticTacToe.technology;
             }
+            else if (imageName == 'VISUALIZER EXPERIMENTS'){
+                var projectLink = app.projects.visualizerExperiments.link;
+                var projectInformation = app.projects.visualizerExperiments.information;
+                var projectTechnology = app.projects.visualizerExperiments.technology;
+            }
+            else if (imageName == 'BEER CRAWL'){
+                var projectLink = app.projects.beerCrawl.link;
+                var projectInformation = app.projects.beerCrawl.information;
+                var projectTechnology = app.projects.beerCrawl.technology;
+            }
+            else if (imageName == 'CHOOSE YOU OWN ADVENTURE'){
+                var projectLink = app.projects.chooseAdventure.link;
+                var projectInformation = app.projects.chooseAdventure.information;
+                var projectTechnology = app.projects.chooseAdventure.technology;
+            }
             else {
                 var projectLink = app.projects.audibleVisuals.link;
                 var projectInformation = app.projects.audibleVisuals.information;
@@ -253,6 +278,27 @@ $(document).ready(function() {
         }
     }
 
+    var hidden, visibilityChange;
+    if (typeof document.hidden !== "undefined") {
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+    }
+
+    function handleVisibilityChange() {
+        if (document[hidden]) {
+            app.audio.pause();
+        } else {
+            app.audio.play();
+        }
+    }
+
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
     // var audio = $('audio')[0];
     // audio.volume = 0.33;
 });
