@@ -39,6 +39,11 @@ app.projects = {
         link: 'https://soniaboller.github.io/choose-your-own-adventure/',
         information: 'Simple choose your own adventure game prototype.',
         technology: 'HTML5, Skeleton, JavaScript'
+    },
+    wavePainting: {
+        link: 'https://soniaboller.github.io/wave-painting/',
+        information: 'Drag your mouse to draw ribbons of color in a circular pattern',
+        technology: 'THREE.js, WebGL'
     }
 };
 app.icons = {
@@ -206,47 +211,53 @@ $(document).ready(function() {
             $('#modal').css('backgroundColor', backgroundColor);
             $('#page-wrapper').addClass('modalOpen');
             var self = this;
+            var projectLink, projectInformation, projectTechnology;
             var imageSrc = $(self)[0].src;
             var imageName = $(self)[0].alt;
             if (imageName == 'COLOR THEORY'){
-                var projectLink = app.projects.colorTheory.link;
-                var projectInformation = app.projects.colorTheory.information;
-                var projectTechnology = app.projects.colorTheory.technology;
+                projectLink = app.projects.colorTheory.link;
+                projectInformation = app.projects.colorTheory.information;
+                projectTechnology = app.projects.colorTheory.technology;
             }
             else if (imageName == 'CAMERALESS CONCERTS'){
-                var projectLink = app.projects.cameralessConcerts.link;
-                var projectInformation = app.projects.cameralessConcerts.information;
-                var projectTechnology = app.projects.cameralessConcerts.technology;
+                projectLink = app.projects.cameralessConcerts.link;
+                projectInformation = app.projects.cameralessConcerts.information;
+                projectTechnology = app.projects.cameralessConcerts.technology;
             }
             else if (imageName == 'AUDIBLE VISUALS'){
-                var projectLink = app.projects.audibleVisuals.link;
-                var projectInformation = app.projects.audibleVisuals.information;
-                var projectTechnology = app.projects.audibleVisuals.technology;
+                projectLink = app.projects.audibleVisuals.link;
+                projectInformation = app.projects.audibleVisuals.information;
+                projectTechnology = app.projects.audibleVisuals.technology;
             }
             else if (imageName == 'TIC TAC NOPE'){
-                var projectLink = app.projects.ticTacToe.link;
-                var projectInformation = app.projects.ticTacToe.information;
-                var projectTechnology = app.projects.ticTacToe.technology;
+                projectLink = app.projects.ticTacToe.link;
+                projectInformation = app.projects.ticTacToe.information;
+                projectTechnology = app.projects.ticTacToe.technology;
             }
             else if (imageName == 'VISUALIZER EXPERIMENTS'){
-                var projectLink = app.projects.visualizerExperiments.link;
-                var projectInformation = app.projects.visualizerExperiments.information;
-                var projectTechnology = app.projects.visualizerExperiments.technology;
+                projectLink = app.projects.visualizerExperiments.link;
+                projectInformation = app.projects.visualizerExperiments.information;
+                projectTechnology = app.projects.visualizerExperiments.technology;
             }
             else if (imageName == 'BEER CRAWL'){
-                var projectLink = app.projects.beerCrawl.link;
-                var projectInformation = app.projects.beerCrawl.information;
-                var projectTechnology = app.projects.beerCrawl.technology;
+                projectLink = app.projects.beerCrawl.link;
+                projectInformation = app.projects.beerCrawl.information;
+                projectTechnology = app.projects.beerCrawl.technology;
             }
             else if (imageName == 'CHOOSE YOU OWN ADVENTURE'){
-                var projectLink = app.projects.chooseAdventure.link;
-                var projectInformation = app.projects.chooseAdventure.information;
-                var projectTechnology = app.projects.chooseAdventure.technology;
+                projectLink = app.projects.chooseAdventure.link;
+                projectInformation = app.projects.chooseAdventure.information;
+                projectTechnology = app.projects.chooseAdventure.technology;
+            }
+            else if (imageName == 'WAVE PAINTING'){
+                projectLink = app.projects.wavePainting.link;
+                projectInformation = app.projects.wavePainting.information;
+                projectTechnology = app.projects.wavePainting.technology;
             }
             else {
-                var projectLink = app.projects.audibleVisuals.link;
-                var projectInformation = app.projects.audibleVisuals.information;
-                var projectTechnology = app.projects.audibleVisuals.technology;
+                projectLink = app.projects.audibleVisuals.link;
+                projectInformation = app.projects.audibleVisuals.information;
+                projectTechnology = app.projects.audibleVisuals.technology;
             }
             $('#modal').append('<h4>' + imageName + '</h4>')
                        .append('<a href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
