@@ -42,7 +42,7 @@ app.projects = {
     },
     wavePainting: {
         link: 'https://soniaboller.github.io/wave-painting/',
-        information: 'Drag your mouse to draw ribbons of color in a circular pattern',
+        information: 'Pick a color, drag a song, watch visuals. ** In production **',
         technology: 'THREE.js, WebGL'
     }
 };
