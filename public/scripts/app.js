@@ -4,6 +4,7 @@ app.projectClicked = false;
 app.black = true;
 app.modalClicked = false;
 app.audio = $('#audio');
+app.pauseButton = true;
 app.projects = {
     colorTheory: {
         link: 'https://soniaboller.github.io/color-theory/',
@@ -34,11 +35,6 @@ app.projects = {
         link: 'http://104.131.102.98/',
         information: 'Various experiments with audio visualizers.',
         technology: 'THREE.js, Web Audio API, Node / Express'
-    },
-    chooseAdventure: {
-        link: 'https://soniaboller.github.io/choose-your-own-adventure/',
-        information: 'Simple choose your own adventure game prototype.',
-        technology: 'HTML5, Skeleton, JavaScript'
     },
     wavePainting: {
         link: 'https://soniaboller.github.io/wave-painting/',
@@ -244,11 +240,6 @@ $(document).ready(function() {
                 projectInformation = app.projects.beerCrawl.information;
                 projectTechnology = app.projects.beerCrawl.technology;
             }
-            else if (imageName == 'CHOOSE YOU OWN ADVENTURE'){
-                projectLink = app.projects.chooseAdventure.link;
-                projectInformation = app.projects.chooseAdventure.information;
-                projectTechnology = app.projects.chooseAdventure.technology;
-            }
             else if (imageName == 'WAVE PAINTING'){
                 projectLink = app.projects.wavePainting.link;
                 projectInformation = app.projects.wavePainting.information;
@@ -279,12 +270,14 @@ $(document).ready(function() {
     }
 
     function playPause(){
-        console.log('clicked');
-        if (app.play) {
+        // console.log('clicked');
+        if (!app.pauseButton) {
             app.audio.pause();
+            app.pauseButton = true;
             app.play = false;
         } else {
             app.audio.play();
+            app.pauseButton = false;
             app.play = true;
         }
     }
@@ -303,8 +296,11 @@ $(document).ready(function() {
 
     function handleVisibilityChange() {
         if (document[hidden]) {
+            app.play = false;
             app.audio.pause();
-        } else {
+        }
+        else if (!document[hidden] && !app.pauseButton){
+            app.play = true;
             app.audio.play();
         }
     }

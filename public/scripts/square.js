@@ -1,6 +1,6 @@
 var app = app || {};
 app.black = true;
-app.play = true;
+app.play = false;
 
 $(document).ready(function() {
     // console.log(app, 'from square');

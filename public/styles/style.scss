@@ -43,8 +43,8 @@ button {
     padding: 0 30px;
     color: #bbb;
     text-align: center;
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 1.15rem;
+    font-weight: 200;
     line-height: 38px;
     letter-spacing: .25rem;
     text-transform: uppercase;
@@ -158,6 +158,7 @@ button:focus {
 #show-about{
     float:left;
     width: 100%;
+    padding-left: 0.5%;
 }
 
 #about-button{
