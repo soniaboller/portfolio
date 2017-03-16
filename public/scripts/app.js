@@ -40,6 +40,11 @@ app.projects = {
         link: 'https://soniaboller.github.io/wave-painting/',
         information: 'Pick a color, drag a song, watch visuals. ** In production **',
         technology: 'THREE.js, WebGL'
+    },
+    geometricTunage: {
+        link: 'https://soniaboller.github.io/geometric-tuneage/',
+        information: 'Visualize particles reacting to waveform data input and animating along a variety of 3D trajectories',
+        technology: 'THREE.js, WebGL, Web Audio API'
     }
 };
 app.icons = {
@@ -244,6 +249,11 @@ $(document).ready(function() {
                 projectLink = app.projects.wavePainting.link;
                 projectInformation = app.projects.wavePainting.information;
                 projectTechnology = app.projects.wavePainting.technology;
+            }
+            else if (imageName == 'GEOMETRIC TUNEAGE'){
+                projectLink = app.projects.geometricTunage.link;
+                projectInformation = app.projects.geometricTunage.information;
+                projectTechnology = app.projects.geometricTunage.technology;
             }
             else {
                 projectLink = app.projects.audibleVisuals.link;
