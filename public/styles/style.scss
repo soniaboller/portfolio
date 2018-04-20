@@ -140,7 +140,7 @@ button:focus {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     border-bottom: 1px solid #555;
     color: #bbb;
-    font-weight: 300;
+    font-weight: 100;
     width: 25vw;
     margin: 1% 1% 1% 0;
     padding: 2% 2% 2% 0;
@@ -172,11 +172,15 @@ button:focus {
 }
 
 #social-media img {
-    width: 15%;
+    width: 10%;
     margin: 0 3%;
+    opacity: 0.85;
+}
+#vsco{
+    opacity: 1 !important;
 }
 
-#pause-button {
+#pause-button, #play-button {
     width: 5%;
     left: 0;
     bottom: 0;
@@ -184,12 +188,16 @@ button:focus {
     z-index: 100;
     padding: 1%;
     cursor: pointer;
+    //color: #fff;
 }
 
+#pause-button{
+    display: none;
+}
 
 // modal shit
 #modal {
-    color: #696969;
+    color: #bbb;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     font-weight: 300;
     position: fixed;
@@ -200,10 +208,11 @@ button:focus {
     opacity: 0;
     pointer-events: none;
     z-index: 1000;
+    background-color: black;
 }
 #modal h4 {
-    font-weight: 300;
-    font-size: 1.75rem;
+    font-weight: 100;
+    font-size: 2rem;
     letter-spacing: 0.5rem;
     margin: 2% 0;
 }
@@ -229,10 +238,32 @@ button:focus {
     pointer-events: auto;
 }
 
+#close-button{
+    float: right;
+    margin: 1%;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #696969;
+}
+
+#close-button:hover{
+    color: #bbb
+}
+
 #page-wrapper, #modal {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+}
+
+#resume{
+    color: #fff;
+    font-size: 0.75em;
+    margin: 0 2%;
+}
+
+#resume:hover{
+    color: #bbb;
 }
 
 @media (max-width:960px) {
@@ -253,8 +284,9 @@ button:focus {
         width: 95%;
     }
     #social-media img {
-        width: 15%;
+        width: 10%;
         margin: 0 3%;
+        opacity: 0.85;
     }
     .project-image {
         border:none;
@@ -314,8 +346,9 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 15%;
+        width: 10%;
         margin: 0 3%;
+        opacity: 0.85;
     }
     .project-image {
         border:none;
@@ -378,8 +411,9 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 15%;
+        width: 10%;
         margin: 0 3%;
+        opacity: 0.85;
     }
     .project-image {
         border:none;
@@ -442,8 +476,9 @@ and (orientation : portrait) {
         width: 95%;
     }
     #social-media img {
-        width: 15%;
+        width: 10%;
         margin: 0 3%;
+        opacity: 0.85;
     }
     .project-image {
         border:none;
@@ -474,4 +509,5 @@ and (orientation : portrait) {
         background: #000;
         width: 100vw;
     }
+
 }

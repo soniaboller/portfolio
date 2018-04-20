@@ -6,6 +6,8 @@
     <link rel='stylesheet' href='/styles/style.css' />
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,600,900|Lato:100,200,300,400,500" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600,800" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
     <script src="/scripts/jquery.min.js"></script>
     <script src="/scripts/three.min.js"></script>
     <script src="/scripts/velocity.min.js"></script>
@@ -24,6 +26,14 @@
                   <img class="project-image" src="/images/projects/audible-visuals.png" alt="AUDIBLE VISUALS">
                   </img>
               </div>
+              <div class="project-box">
+                  <img class="project-image" src="/images/projects/meteorite-landings.png" alt="METEORITE LANDINGS">
+                  </img>
+              </div>
+              <div class="project-box">
+                  <img class="project-image" src="/images/projects/squarewave.png" alt="SQUARE WAVE">
+                  </img>
+              </div>
                 <div class="project-box">
                     <img class="project-image" src="/images/projects/color-theory.png" alt="COLOR THEORY">
                     </img>
@@ -33,11 +43,19 @@
                   </img>
               </div>
               <div class="project-box">
+                  <img class="project-image" src="/images/projects/shaders.png" alt="SHADERS">
+                  </img>
+              </div>
+              <div class="project-box">
                   <img class="project-image" src="/images/projects/visualizer-experiments.png" alt="VISUALIZER EXPERIMENTS">
                   </img>
               </div>
               <div class="project-box">
                   <img class="project-image" src="/images/projects/wave-painting.png" alt="WAVE PAINTING">
+                  </img>
+              </div>
+              <div class="project-box">
+                  <img class="project-image" src="/images/projects/birthday.png" alt="BIRTHDAY">
                   </img>
               </div>
               <div class="project-box">
@@ -58,45 +76,55 @@
     <button id="about-button">SONIA BOLLER</button>
           <div id="show-about">
             <!--<div class="about-box" id="name">SONIA BOLLER</div>-->
-            <div class="about-box" id="information"> WEB DEVELOPER </div>
-            <div class="about-box" id="brand-statement"> CREATIVE AND DETAIL-ORIENTED INDIVIDUAL PASSIONATE ABOUT BLENDING DESIGN AND LOGIC</div>
+            <div class="about-box" id="information"> CREATIVE TECHNOLOGIST BASED IN NEW YORK |
+                <a id="resume" href="./media/Sonia_Boller_Resume.pdf" download> cv </a> |
+            </div>
+            <div class="about-box" id="brand-statement"> INNOVATIVE & SYSTEMATIC INDIVIDUAL PASSIONATE ABOUT CREATING IMMERSIVE VISUAL & INTERACTIVE EXPERIENCES</div>
             <section class="about-box" id="social-media">
                   <ul>
                       <li>
                           <a href="https://github.com/soniaboller" target="_blank">
-                              <img id="github" alt="github"/>
+                              <img id="github" alt="github" src="./images/social-media/github-white.png"/>
                           </a>
                       </li>
                       <li>
                           <a href="https://www.linkedin.com/in/sboller" target="_blank">
-                              <img id="linkedin" alt="linkedin"/>
+                              <img id="linkedin" alt="linkedin" src="./images/social-media/linkedin-white.png"/>
                           </a>
                       </li>
                       <li>
                           <a href="https://www.instagram.com/sboller/" target="_blank">
-                              <img id="instagram" alt="instagram"/>
+                              <img id="instagram" alt="instagram" src="./images/social-media/instagram-white.png"/>
                           </a>
                       </li>
                       <li>
                           <a href="mailto:soniaboller@gmail.com">
-                              <img id="email" alt="email"/>
+                              <img id="email" alt="email" src="./images/social-media/mail-white.png"/>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="http://vsco.co/soniaboller/" target="_blank">
+                              <img id="vsco" alt="vsco" src="./images/social-media/vsco-white.png"/>
                           </a>
                       </li>
                   </ul>
               </section>
             <div class="about-box" id="skills">
-              AVID FAN OF:
+              INTERESTS:
               <span id="skills-list"></span>
             </div>
           </div>
     </div>
     <!--<audio autoplay="autoplay" src="media/forgotwhy.mp3"></audio>-->
-      <audio src="media/forgotwhy.mp3"></audio>
-      <div id="pause-button">
-          <img id ="pause" alt="pause" src="/images/social-media/pause-white.png">
+      <audio src="media/sunset.mp3" loop></audio>
+      <div id="play-button" title="Sunset - Imagined Herbal Flows">
+          <i id="play" class="material-icons">play_arrow</i>
+      </div>
+      <div id="pause-button" title="Sunset - Imagined Herbal Flows">
+          <i class="material-icons">pause</i>
       </div>
       <div id="modal">
-  </div>
+        </div>
   </div>
   <noscript> Your browser does not support JavaScript :( </noscript>
   </body>

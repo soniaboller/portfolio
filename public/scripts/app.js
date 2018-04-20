@@ -23,7 +23,7 @@ app.projects = {
     },
     audibleVisuals: {
         link: 'https://soniaboller.github.io/audible-visuals/',
-        information: 'Drag a song from your computer, see visualization on screen. \n <em> ~ Featured on <a href="https://www.chromeexperiments.com/experiment/audible-visuals" target="_blank">Chrome Experiments</a> ~',
+        information: 'Drag a song from your computer, see visualization on screen. \n <em> ~ Featured on <a href="https://experiments.withgoogle.com/chrome/audible-visuals" target="_blank">Chrome Experiments</a> ~',
         technology: 'THREE.js, Web Audio API, WebGL, Canvas'
     },
     ticTacToe: {
@@ -32,37 +32,57 @@ app.projects = {
         technology: 'HTML5, CSS, and jQuery'
     },
     visualizerExperiments: {
-        link: 'http://104.131.102.98/',
+        link: 'https://visualizer-experiments.herokuapp.com',
         information: 'Various experiments with audio visualizers.',
         technology: 'THREE.js, Web Audio API, Node / Express'
     },
     wavePainting: {
         link: 'https://soniaboller.github.io/wave-painting/',
-        information: 'Pick a color, drag a song, watch visuals. ** In production **',
+        information: 'Pick a color, make noise, and watch a mandala form.',
         technology: 'THREE.js, WebGL'
     },
     geometricTunage: {
         link: 'https://soniaboller.github.io/geometric-tuneage/',
-        information: 'Visualize particles reacting to waveform data input and animating along a variety of 3D trajectories',
+        information: 'Visualize particles reacting to waveform data input and animating along a variety of 3D trajectories \n <em> ~ Featured on <a href="https://experiments.withgoogle.com/chrome/geometric-tuneage-1" target="_blank">Chrome Experiments</a> ~',
         technology: 'THREE.js, WebGL, Web Audio API'
-    }
-};
-app.icons = {
-    black : {
-        github: '/images/social-media/github-black.png',
-        linkedin: '/images/social-media/linkedin-black.png',
-        instagram: '/images/social-media/instagram-black.png',
-        email: '/images/social-media/mail-black.png',
-        pause: '/images/social-media/pause-black.png'
     },
-    white: {
-        github: '/images/social-media/github-white.png',
-        linkedin: '/images/social-media/linkedin-white.png',
-        instagram: '/images/social-media/instagram-white.png',
-        email: '/images/social-media/mail-white.png',
-        pause: '/images/social-media/pause-white.png'
+    meteoriteLandings: {
+        link: 'https://soniaboller.github.io/meteorite-landings/',
+        information: 'Visualize all meteorite landings in chronological order.',
+        technology: 'THREE.js, WebGL, NASA API'
+    },
+    squarewave: {
+        link: 'https://soniaboller.github.io/squarewave/',
+        information: 'Visualize a wavy grid reacting to waveform data input.',
+        technology: 'THREE.js, WebGL, Web Audio API'
+    },
+    shaders: {
+        link: 'https://soniaboller.github.io/shaders/',
+        information: 'WebGL shader experiment that reacts to mic input.',
+        technology: 'THREE.js, WebGL, Web Audio API'
+    },
+    birthday: {
+        link: 'https://soniaboller.github.io/birthday/',
+        information: 'Birthdays are weird.',
+        technology: 'THREE.js, WebGL'
     }
 };
+// app.icons = {
+//     black : {
+//         github: '/images/social-media/github-black.png',
+//         linkedin: '/images/social-media/linkedin-black.png',
+//         instagram: '/images/social-media/instagram-black.png',
+//         email: '/images/social-media/mail-black.png',
+//         pause: '/images/social-media/pause-black.png'
+//     },
+//     white: {
+//         github: '/images/social-media/github-white.png',
+//         linkedin: '/images/social-media/linkedin-white.png',
+//         instagram: '/images/social-media/instagram-white.png',
+//         email: '/images/social-media/mail-white.png',
+//         pause: '/images/social-media/pause-white.png'
+//     }
+// };
 
 $(document).ready(function() {
     app.windowWidth = $(window).width();
@@ -70,6 +90,7 @@ $(document).ready(function() {
     $('#about-button').on('click', aboutClick);
     $('#projects-button').on('click', projectClick);
     $('#pause-button').on('click', playPause);
+    $('#play-button').on('click', playPause);
     $('.project-image').on('click', projectImageClick)
         .on('mouseenter', function(){
         var self = this;
@@ -82,12 +103,8 @@ $(document).ready(function() {
 
     $('canvas').on('click', function(){
         if(app.modalClicked){
-            clearModal()
+            clearModal();
         }
-    });
-
-    $('button').mouseup(function(){
-        $(this).blur();
     });
 
     $('body').keydown(function(e){
@@ -96,12 +113,16 @@ $(document).ready(function() {
         }
     });
 
+    $('button').mouseup(function(){
+        $(this).blur();
+    });
+
     function checkWindowWidth(){
         app.windowWidth = $(window).width();
     }
 
     function aboutClick(){
-        changeColor();
+        // changeColor();
         if (app.modalClicked) clearModal();
         if (!app.aboutClicked){
             if(app.windowWidth < 415){
@@ -112,9 +133,9 @@ $(document).ready(function() {
             }
             $('#skills').velocity('fadeIn', { delay: 750, duration: 750});
             $('#skills-list').typed({
-                strings: [' THREE.js',' Web Audio API',' React',' Node / Express',' Ruby / Sinatra', ' MySQL'],
-                typeSpeed: 10,
-                startDelay: 0,
+                strings: ['INTERACTIVE MEDIA','COMPUTER GRAPHICS ART', 'CREATIVE CODING', 'ROCK CLIMBING',' PHOTOGRAPHY', 'DOGS'],
+                typeSpeed: -500,
+                startDelay: 1500,
                 backDelay: 500,
                 loop: true,
                 showCursor: false
@@ -137,7 +158,7 @@ $(document).ready(function() {
     }
 
     function projectClick(){
-        changeColor();
+        // changeColor();
         if (app.modalClicked) clearModal();
         if (!app.projectClicked){
             if(app.windowWidth < 415){
@@ -162,49 +183,49 @@ $(document).ready(function() {
         app.projectClicked = !app.projectClicked;
     }
 
-    function changeColor(){
-        var instagram = $('#instagram');
-        if (app.windowWidth >= 960){
-            if (app.black) {
-                $('body').css('backgroundColor', '#fff');
-                $('.about-box').addClass('about-box-border');
-                $('#about-button, #projects-button').addClass('button-clicked');
-                $('#github').attr('src', app.icons.black.github);
-                $('#linkedin').attr('src', app.icons.black.linkedin);
-                $('#instagram').attr('src', app.icons.black.instagram);
-                $('#email').attr('src', app.icons.black.email);
-                $('#pause').attr('src', app.icons.black.pause);
-                renderer.setClearColor(0xffffff, 1);
-                for (var i = 0; i <= particles.length; i++) {
-                    particle = particles[i++];
-                    particle.material.color.setHex(0x000000);
-                }
-                app.black = !app.black;
-            }
-            else {
-                $('body').css('backgroundColor', '#000');
-                $('.about-box').removeClass('about-box-border');
-                $('#about-button, #projects-button').removeClass('button-clicked');
-                $('#github').attr('src', app.icons.white.github);
-                $('#linkedin').attr('src', app.icons.white.linkedin);
-                $('#instagram').attr('src', app.icons.white.instagram);
-                $('#email').attr('src', app.icons.white.email);
-                $('#pause').attr('src', app.icons.white.pause);
-                renderer.setClearColor(0x000000, 1);
-                for (var i = 0; i <= particles.length; i++) {
-                    particle = particles[i++];
-                    particle.material.color.setHex(0xffffff);
-                }
-                app.black = !app.black;
-            }
-        }
-        else{
-            $('#github').attr('src', app.icons.white.github);
-            $('#linkedin').attr('src', app.icons.white.linkedin);
-            $('#instagram').attr('src', app.icons.white.instagram);
-            $('#email').attr('src', app.icons.white.email);
-        }
-    }
+    // function changeColor(){
+    //     var instagram = $('#instagram');
+    //     if (app.windowWidth >= 960){
+    //         if (app.black) {
+    //             $('body').css('backgroundColor', '#fff');
+    //             $('.about-box').addClass('about-box-border');
+    //             $('#about-button, #projects-button').addClass('button-clicked');
+    //             $('#github').attr('src', app.icons.black.github);
+    //             $('#linkedin').attr('src', app.icons.black.linkedin);
+    //             $('#instagram').attr('src', app.icons.black.instagram);
+    //             $('#email').attr('src', app.icons.black.email);
+    //             $('#pause').attr('src', app.icons.black.pause);
+    //             renderer.setClearColor(0xffffff, 1);
+    //             for (var i = 0; i <= particles.length; i++) {
+    //                 particle = particles[i++];
+    //                 particle.material.color.setHex(0x000000);
+    //             }
+    //             app.black = !app.black;
+    //         }
+    //         else {
+    //             $('body').css('backgroundColor', '#000');
+    //             $('.about-box').removeClass('about-box-border');
+    //             $('#about-button, #projects-button').removeClass('button-clicked');
+    //             $('#github').attr('src', app.icons.white.github);
+    //             $('#linkedin').attr('src', app.icons.white.linkedin);
+    //             $('#instagram').attr('src', app.icons.white.instagram);
+    //             $('#email').attr('src', app.icons.white.email);
+    //             $('#pause').attr('src', app.icons.white.pause);
+    //             renderer.setClearColor(0x000000, 1);
+    //             for (var i = 0; i <= particles.length; i++) {
+    //                 particle = particles[i++];
+    //                 particle.material.color.setHex(0xffffff);
+    //             }
+    //             app.black = !app.black;
+    //         }
+    //     }
+    //     else{
+    //         $('#github').attr('src', app.icons.white.github);
+    //         $('#linkedin').attr('src', app.icons.white.linkedin);
+    //         $('#instagram').attr('src', app.icons.white.instagram);
+    //         $('#email').attr('src', app.icons.white.email);
+    //     }
+    // }
 
     function projectImageClick(){
         if (!app.modalClicked) {
@@ -255,15 +276,36 @@ $(document).ready(function() {
                 projectInformation = app.projects.geometricTunage.information;
                 projectTechnology = app.projects.geometricTunage.technology;
             }
-            else {
-                projectLink = app.projects.audibleVisuals.link;
-                projectInformation = app.projects.audibleVisuals.information;
-                projectTechnology = app.projects.audibleVisuals.technology;
+            else if (imageName == 'METEORITE LANDINGS'){
+                projectLink = app.projects.meteoriteLandings.link;
+                projectInformation = app.projects.meteoriteLandings.information;
+                projectTechnology = app.projects.meteoriteLandings.technology;
             }
-            $('#modal').append('<h4>' + imageName + '</h4>')
-                       .append('<a href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
+            else if (imageName == 'SQUARE WAVE'){
+                projectLink = app.projects.squarewave.link;
+                projectInformation = app.projects.squarewave.information;
+                projectTechnology = app.projects.squarewave.technology;
+            }
+            else if (imageName == 'SHADERS'){
+                projectLink = app.projects.shaders.link;
+                projectInformation = app.projects.shaders.information;
+                projectTechnology = app.projects.shaders.technology;
+            }
+            else if (imageName == 'BIRTHDAY'){
+                projectLink = app.projects.birthday.link;
+                projectInformation = app.projects.birthday.information;
+                projectTechnology = app.projects.birthday.technology;
+            }
+            $('#modal').append('<span id="close-button">x</span>')
+                       .append('<h4>' + imageName + '</h4>')
+                       .append('<a style="cursor: pointer;" href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
                        .append('<p>' + projectInformation + '</p>')
                        .append('<p> Built with: ' + projectTechnology + '</p>');
+            $('#close-button').on('click', function(){
+                if(app.modalClicked){
+                    clearModal();
+                }
+            });
             app.modalClicked = !app.modalClicked;
             if (app.modalClicked){
                 $('#show-projects').velocity("slideUp", { duration: 500 });
@@ -285,10 +327,14 @@ $(document).ready(function() {
             app.audio.pause();
             app.pauseButton = true;
             app.play = false;
+            $('#pause-button').css('display', 'none');
+            $('#play-button').css('display', 'block');
         } else {
             app.audio.play();
             app.pauseButton = false;
             app.play = true;
+            $('#pause-button').css('display', 'block');
+            $('#play-button').css('display', 'none');
         }
     }
 

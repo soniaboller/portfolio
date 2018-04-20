@@ -63,10 +63,16 @@ $(document).ready(function() {
                     if (app.windowWidth > 780) {
                         if (app.play) {
                             app.audio.pause();
+                            app.pauseButton = true;
                             app.play = false;
+                            $('#pause-button').css('display', 'none');
+                            $('#play-button').css('display', 'block');
                         } else {
                             app.audio.play();
+                            app.pauseButton = false;
                             app.play = true;
+                            $('#pause-button').css('display', 'block');
+                            $('#play-button').css('display', 'none');
                         }
                     }
                     break;
