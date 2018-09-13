@@ -66,6 +66,9 @@ button:focus {
 .button-clicked:focus {
   outline: 0; }
 
+.hidden {
+  display: none; }
+
 #about-container, #project-container {
   margin: 1%;
   z-index: 1;
@@ -180,7 +183,7 @@ button:focus {
   background-color: black; }
 
 #modal h4 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 2rem;
   letter-spacing: 0.5rem;
   margin: 2% 0; }

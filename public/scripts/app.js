@@ -16,11 +16,11 @@ app.projects = {
         information: 'Collective sharing platform for concert photos.',
         technology: 'Node / Express, mySQL, Bookshelf, Handlebars, Sass'
     },
-    beerCrawl: {
-        link: 'https://github.com/BendyW/beercrawl-app-client',
-        information: 'Create a user. Join a team. Join an event as a team. Go on a beer crawl scavenger hunt.',
-        technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
-    },
+    // beerCrawl: {
+    //     link: 'https://github.com/BendyW/beercrawl-app-client',
+    //     information: 'Create a user. Join a team. Join an event as a team. Go on a beer crawl scavenger hunt.',
+    //     technology: 'Angular, Google Maps API, mySQL Ruby / Sinatra, Sass'
+    // },
     audibleVisuals: {
         link: 'https://soniaboller.github.io/audible-visuals/',
         information: 'Drag a song from your computer, see visualization on screen. \n <em> ~ Featured on <a href="https://experiments.withgoogle.com/chrome/audible-visuals" target="_blank">Chrome Experiments</a> ~',
@@ -65,6 +65,11 @@ app.projects = {
         link: 'https://soniaboller.github.io/birthday/',
         information: 'Birthdays are weird.',
         technology: 'THREE.js, WebGL'
+    },
+    bikeStickers: {
+        link: '',
+        information: 'Design collaboration with <a href="https://www.linkedin.com/in/ian-fried-92a9265a">Ian Fried </a> to create stickers promoting bicycling and biker awareness',
+        technology: 'Illustrator, Photoshop'
     }
 };
 // app.icons = {
@@ -85,6 +90,7 @@ app.projects = {
 // };
 
 $(document).ready(function() {
+    $('.single-item').slick();
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
     $('#about-button').on('click', aboutClick);
@@ -232,9 +238,15 @@ $(document).ready(function() {
             var backgroundColor = $('body')[0].style.backgroundColor;
             $('#modal').css('backgroundColor', backgroundColor);
             $('#page-wrapper').addClass('modalOpen');
+            let bike = false;
             var self = this;
             var projectLink, projectInformation, projectTechnology;
             var imageSrc = $(self)[0].src;
+            var classList =$(self)[0].classList;
+            console.log(classList);
+            if($(self).hasClass('bike')){
+                bike = true;
+            }
             var imageName = $(self)[0].alt;
             if (imageName == 'COLOR THEORY'){
                 projectLink = app.projects.colorTheory.link;
@@ -296,11 +308,26 @@ $(document).ready(function() {
                 projectInformation = app.projects.birthday.information;
                 projectTechnology = app.projects.birthday.technology;
             }
-            $('#modal').append('<span id="close-button">x</span>')
-                       .append('<h4>' + imageName + '</h4>')
-                       .append('<a style="cursor: pointer;" href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
-                       .append('<p>' + projectInformation + '</p>')
-                       .append('<p> Built with: ' + projectTechnology + '</p>');
+            else if (imageName == 'BIKE STICKERS'){
+                projectLink = '';
+                projectInformation = app.projects.bikeStickers.information;
+                projectTechnology = app.projects.bikeStickers.technology;
+            }
+            if(bike){
+                $('#modal').append('<span id="close-button">x</span>')
+                    .append('<h4>' + imageName + '</h4>')
+                    .append('<div>'+ '<img src="' + imageSrc + '">' + '</div>')
+                    .append('<p>' + projectInformation + '</p>')
+                    .append('<p> Created using: ' + projectTechnology + '</p>');
+            }
+            else{
+                $('#modal').append('<span id="close-button">x</span>')
+                    .append('<h4>' + imageName + '</h4>')
+                    .append('<a style="cursor: pointer;" href="'+ projectLink +'" target="_blank">'+ '<img src="' + imageSrc + '">' + '</a>')
+                    .append('<p>' + projectInformation + '</p>')
+                    .append('<p> Built using: ' + projectTechnology + '</p>');
+            }
+
             $('#close-button').on('click', function(){
                 if(app.modalClicked){
                     clearModal();
