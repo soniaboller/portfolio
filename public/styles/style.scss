@@ -123,6 +123,13 @@ button:focus {
 .project-image-hover{
     border: 1px solid #bbb;
 }
+.link-image{
+    opacity: 0.80 !important;
+}
+
+.link-image:hover{
+    opacity: 1 !important;
+}
 
 .project-box{
     float: right;
@@ -180,8 +187,14 @@ button:focus {
     margin: 0 3%;
     opacity: 0.85;
 }
-#vsco{
+#social-media img:hover {
+    width: 10%;
+    margin: 0 3%;
     opacity: 1 !important;
+}
+#vsco{
+    width: 11% !important;
+    opacity: 0.9;
 }
 
 #pause-button, #play-button {
@@ -213,6 +226,8 @@ button:focus {
     pointer-events: none;
     z-index: 1000;
     background-color: black;
+    max-height: 85vh;
+    overflow-y: scroll;
 }
 #modal h4 {
     font-weight: 300;
@@ -221,9 +236,13 @@ button:focus {
     margin: 2% 0;
 }
 
-#modal img{
+#modal img, #modal video{
     width: 95%;
     opacity: 1;
+}
+#modal .collage {
+    width: 70%;
+    padding: 0 10%;
 }
 
 .modalOpen #page-wrapper {
@@ -299,7 +318,7 @@ button:focus {
     #modal{
         padding: 3%;
         background-color: black;
-        width: 100%;
+        width: 95%;
         left: 0;
         top: 23%;
     }
@@ -327,7 +346,8 @@ and (orientation : portrait) {
     button{
         color: #fff;
         font-weight: 300;
-        margin: 2%;
+        font-size: 0.8em;
+        margin: 0.75%;
         border: 1px solid #fff;
     }
     button:hover{
@@ -361,7 +381,7 @@ and (orientation : portrait) {
     #modal{
         padding: 3%;
         background-color: black;
-        width: 100%;
+        width: 95%;
         left: 0;
         top: 18%;
     }
@@ -391,7 +411,7 @@ and (orientation : portrait) {
     button{
         color: #fff;
         font-weight: 300;
-        margin: 2%;
+        margin: 1%;
         border: 1px solid #fff;
     }
     button:hover{
@@ -426,7 +446,7 @@ and (orientation : portrait) {
     #modal{
         padding: 3%;
         background-color: black;
-        width: 100%;
+        width: 95%;
         left: 0;
         top: 18%;
     }
@@ -492,7 +512,7 @@ and (orientation : portrait) {
     #modal{
         padding: 3%;
         background-color: black;
-        width: 100%;
+        width: 95%;
         left: 0;
         top: 18%;
     }
