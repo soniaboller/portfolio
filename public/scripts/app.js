@@ -154,7 +154,7 @@ $(document).ready(function() {
             }
             $('#skills').velocity('fadeIn', { delay: 750, duration: 750});
             $('#skills-list').typed({
-                strings: ['INTERACTIVE MEDIA','GENERATIVE ART', 'AUDIO VISUALIZATION', 'CREATIVE TECHNOLOGY', ' PHOTOGRAPHY', 'ROCK CLIMBING'],
+                strings: ['interactive media', 'generative art', 'audio visualization', 'creative technology', ' photography', 'sustainability'],
                 typeSpeed: -500,
                 startDelay: 1500,
                 backDelay: 500,

@@ -247,6 +247,12 @@ button:focus {
 #resume:hover {
   color: #bbb; }
 
+.link {
+  color: #fff !important; }
+
+.link:hover {
+  color: #bbb !important; }
+
 @media (max-width: 960px) {
   #project-container {
     position: fixed;
