@@ -85,6 +85,11 @@ app.projects = {
         link: 'https://www.instagram.com/p/Bo9ZeCFldlS/',
         information: 'vagina vortex, according to urban dictionary — the force that pulls a friend away at the beginning of his new relationship, rarely losing its grip. <br/> vagina vortex, translated — the overwhelming fear men feel in regards to women sucking away all their power.',
         technology: 'openFrameworks, Photography'
+    },
+    soundSketches: {
+        link: 'https://www.instagram.com/p/BofAb7FloMl/',
+        information: 'Printed waveform of various songs.',
+        technology: 'openFrameworks'
     }
 };
 // app.icons = {
@@ -255,6 +260,7 @@ $(document).ready(function() {
             $('#page-wrapper').addClass('modalOpen');
             let ocean = false;
             let seasons = false;
+            let soundSketches = false;
             var self = this;
             var projectLink, projectInformation, projectTechnology;
             var imageSrc = $(self)[0].src;
@@ -265,6 +271,9 @@ $(document).ready(function() {
             }
             if($(self).hasClass('seasons')){
                 seasons = true;
+            }
+            if($(self).hasClass('soundSketches')){
+                soundSketches = true;
             }
             var imageName = $(self)[0].alt;
             switch (imageName){
@@ -347,6 +356,11 @@ $(document).ready(function() {
                     projectLink = app.projects.vaginaVortex.link;
                     projectInformation = app.projects.vaginaVortex.information;
                     projectTechnology = app.projects.vaginaVortex.technology;
+                    break;
+                case 'SOUND SKETCHES':
+                    projectLink = app.projects.soundSketches.link;
+                    projectInformation = app.projects.soundSketches.information;
+                    projectTechnology = app.projects.soundSketches.technology;
                     break;
             }
             // if (imageName == 'COLOR THEORY'){
@@ -440,6 +454,28 @@ $(document).ready(function() {
                         '<div>'+ '<img src="' + imageSrc + '">' +
                         '<div>'+ '<video muted controls src="/images/projects/ocean-of-trash.mov">' + '</div>' +
                         '<div>'+ '<video muted controls src="/images/projects/ocean-of-trash2.mov">' + '</div>'
+                    )
+                    .append('<p>' + projectInformation + '</p>')
+                    .append('<p> Built using: ' + projectTechnology + '</p>');
+            }
+            else if(soundSketches){
+                $('#modal').append('<span id="close-button">x</span>')
+                    .append('<h4>' + imageName + '</h4>')
+                    .append(
+                        '<a style="cursor: pointer;" class="big-image" href="'+ projectLink +'" target="_blank">' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/dress.jpg">' + '</div>' +
+                        '<p> Dress - Sylvan Esso</p>' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/boardwalk.jpg">' + '</div>' +
+                        '<p> Boardwalk - IHF</p>' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/murderers.jpg">' + '</div>' +
+                        '<p> Murderers - Frusciante</p>' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/scarymonsters.jpg">' + '</div>' +
+                        '<p> Scary Monsters and Nice Sprites - Skrillex</p>' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/shrimps.jpg">' + '</div>' +
+                        '<p> Shrimps - Homeboi</p>' +
+                        '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/thewolves.jpg">' + '</div>' +
+                        '<p> The Wolves - Bon Iver</p>' +
+                        '</a>'
                     )
                     .append('<p>' + projectInformation + '</p>')
                     .append('<p> Built using: ' + projectTechnology + '</p>');

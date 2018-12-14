@@ -297,6 +297,14 @@ button:focus {
     color: #bbb !important;
 }
 
+a.big-image , a:active,.big-image, a:hover.big-image, a:visited.big-image{
+    color: #bbb !important;
+    font-size: 0.75rem;
+}
+.big-image > p{
+    margin-top: 0 !important;
+}
+
 @media (max-width:960px) {
     #project-container{
         position: fixed;
