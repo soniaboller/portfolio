@@ -90,6 +90,11 @@ app.projects = {
         link: 'https://www.instagram.com/p/BofAb7FloMl/',
         information: 'Printed waveform of various songs.',
         technology: 'openFrameworks'
+    },
+    faceWarp: {
+        link: '',
+        information: 'Warped faces – started as a single post on Instagram of my own face and evolved into user requests of various people / characters',
+        technology: 'openFrameworks'
     }
 };
 // app.icons = {
@@ -110,7 +115,7 @@ app.projects = {
 // };
 
 $(document).ready(function() {
-    $('.single-item').slick();
+    $('.single-item').click();
     app.windowWidth = $(window).width();
     $(window).on('resize',checkWindowWidth);
     $('#about-button').on('click', aboutClick);
@@ -261,6 +266,7 @@ $(document).ready(function() {
             let ocean = false;
             let seasons = false;
             let soundSketches = false;
+            let faceWarp = false;
             var self = this;
             var projectLink, projectInformation, projectTechnology;
             var imageSrc = $(self)[0].src;
@@ -269,11 +275,14 @@ $(document).ready(function() {
             if($(self).hasClass('ocean')){
                 ocean = true;
             }
-            if($(self).hasClass('seasons')){
+            else if($(self).hasClass('seasons')){
                 seasons = true;
             }
-            if($(self).hasClass('soundSketches')){
+            else if($(self).hasClass('soundSketches')){
                 soundSketches = true;
+            }
+            else if($(self).hasClass('faceWarp')){
+                faceWarp = true;
             }
             var imageName = $(self)[0].alt;
             switch (imageName){
@@ -361,6 +370,11 @@ $(document).ready(function() {
                     projectLink = app.projects.soundSketches.link;
                     projectInformation = app.projects.soundSketches.information;
                     projectTechnology = app.projects.soundSketches.technology;
+                    break;
+                case 'FACE WARP':
+                    projectLink = app.projects.faceWarp.link;
+                    projectInformation = app.projects.faceWarp.information;
+                    projectTechnology = app.projects.faceWarp.technology;
                     break;
             }
             // if (imageName == 'COLOR THEORY'){
@@ -476,6 +490,30 @@ $(document).ready(function() {
                         '<div>'+ '<img class="link-image" src="/images/projects/sound-sketches/thewolves.jpg">' + '</div>' +
                         '<p> The Wolves - Bon Iver</p>' +
                         '</a>'
+                    )
+                    .append('<p>' + projectInformation + '</p>')
+                    .append('<p> Built using: ' + projectTechnology + '</p>');
+            }
+            else if(faceWarp){
+                $('#modal').append('<span id="close-button">x</span>')
+                    .append('<h4>' + imageName + '</h4>')
+                    .append(
+                        '<div id="face-warp-videos">' +
+                        '<video muted controls src="/images/projects/face-warp/sonia.mov"/>' +
+                        '<p> Sonia Boller</p>' +
+                        '<video muted controls src="/images/projects/face-warp/nickcage.mov"/>' +
+                        '<p> Nicholas Cage</p>' +
+                        '<video muted controls src="/images/projects/face-warp/buscemi.mov"/>' +
+                        '<p> Steve Buscemi</p>' +
+                        '<video muted controls src="/images/projects/face-warp/kimcrying.mov"/>' +
+                        '<p> Kim Kardashian</p>' +
+                        '<video muted controls src="/images/projects/face-warp/hp.mov"/>' +
+                        '<p> Harry Potter</p>' +
+                        '<video muted controls src="/images/projects/face-warp/denzel.mov"/>' +
+                        '<p> Denzel Washington</p>' +
+                        '<video muted controls src="/images/projects/face-warp/smeagol.mov"/>' +
+                        '<p> Smeágol</p>' +
+                        '</div>'
                     )
                     .append('<p>' + projectInformation + '</p>')
                     .append('<p> Built using: ' + projectTechnology + '</p>');

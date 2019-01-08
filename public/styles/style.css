@@ -111,6 +111,13 @@ button:focus {
 .link-image:hover {
   opacity: 1 !important; }
 
+#face-warp-videos > p {
+  color: #bbb !important;
+  font-size: 0.75rem; }
+
+#face-warp-videos > video {
+  max-height: 70vh; }
+
 .project-box {
   float: right;
   clear: both; }
