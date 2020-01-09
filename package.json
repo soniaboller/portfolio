@@ -15,7 +15,7 @@
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^2.3.2",
     "gulp-watch": "^4.3.11",
-    "morgan": "~1.7.0",
+    "morgan": "~1.9.1",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
   }
