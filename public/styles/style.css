@@ -111,11 +111,11 @@ button:focus {
 .link-image:hover {
   opacity: 1 !important; }
 
-#face-warp-videos > p {
+.video-projects > p {
   color: #bbb !important;
   font-size: 0.75rem; }
 
-#face-warp-videos > video {
+.video-projects > video {
   max-height: 70vh; }
 
 .project-box {

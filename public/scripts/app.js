@@ -1,3 +1,4 @@
+// 2020 TODO – rewrite this entire portfolio structure
 var app = app || {};
 app.aboutClicked = false;
 app.projectClicked = false;
@@ -95,6 +96,11 @@ app.projects = {
         link: '',
         information: 'Warped faces – started as a single post on Instagram of my own face and evolved into user requests of various people / characters',
         technology: 'openFrameworks'
+    },
+    watercolor: {
+        link: '',
+        information: 'Songs visualized as watercolor splatter paintings',
+        technology: 'TouchDesigner'
     }
 };
 // app.icons = {
@@ -267,6 +273,7 @@ $(document).ready(function() {
             let seasons = false;
             let soundSketches = false;
             let faceWarp = false;
+            let watercolor = false;
             var self = this;
             var projectLink, projectInformation, projectTechnology;
             var imageSrc = $(self)[0].src;
@@ -283,6 +290,9 @@ $(document).ready(function() {
             }
             else if($(self).hasClass('faceWarp')){
                 faceWarp = true;
+            }
+            else if($(self).hasClass('watercolor')){
+                watercolor = true;
             }
             var imageName = $(self)[0].alt;
             switch (imageName){
@@ -375,6 +385,16 @@ $(document).ready(function() {
                     projectLink = app.projects.faceWarp.link;
                     projectInformation = app.projects.faceWarp.information;
                     projectTechnology = app.projects.faceWarp.technology;
+                    break;
+                case 'WATERCOLOR':
+                    projectLink = app.projects.watercolor.link;
+                    projectInformation = app.projects.watercolor.information;
+                    projectTechnology = app.projects.watercolor.technology;
+                    break;
+                case 'FROG50':
+                    projectLink = app.projects.frog50.link;
+                    projectInformation = app.projects.frog50.information;
+                    projectTechnology = app.projects.frog50.technology;
                     break;
             }
             // if (imageName == 'COLOR THEORY'){
@@ -498,7 +518,7 @@ $(document).ready(function() {
                 $('#modal').append('<span id="close-button">x</span>')
                     .append('<h4>' + imageName + '</h4>')
                     .append(
-                        '<div id="face-warp-videos">' +
+                        '<div class="video-projects">' +
                         '<video muted controls src="/images/projects/face-warp/sonia.mov"/>' +
                         '<p> Sonia Boller</p>' +
                         '<video muted controls src="/images/projects/face-warp/nickcage.mov"/>' +
@@ -513,6 +533,28 @@ $(document).ready(function() {
                         '<p> Denzel Washington</p>' +
                         '<video muted controls src="/images/projects/face-warp/smeagol.mov"/>' +
                         '<p> Smeágol</p>' +
+                        '</div>'
+                    )
+                    .append('<p>' + projectInformation + '</p>')
+                    .append('<p> Built using: ' + projectTechnology + '</p>');
+            }
+            else if(watercolor){
+                $('#modal').append('<span id="close-button">x</span>')
+                    .append('<h4>' + imageName + '</h4>')
+                    .append(
+                        '<div class="video-projects">' +
+                        '<video controls preload><source src="/images/projects/watercolor/theblaze-territory.mp4" type="video/mp4"></video>' +
+                        '<p>Territory – The Blaze</p>' +
+                        '<video controls preload><source src="/images/projects/watercolor/theblaze-breath.mp4" type="video/mp4"></video>' +
+                        '<p>BREATH – The Blaze</p>' +
+                        '<video controls preload><source src="/images/projects/watercolor/theblaze-virile.mp4" type="video/mp4"></video>' +
+                        '<p>Virile – The Blaze</p>' +
+                        '<video controls preload><source src="/images/projects/watercolor/polica-tiff.mp4" type="video/mp4"></video>' +
+                        '<p>Tiff – Polica</p>' +
+                        '<video controls preload><source src="/images/projects/watercolor/darius-mountains.mp4" type="video/mp4"></video>' +
+                        '<p>Mountains – Darius</p>' +
+                        '<video controls preload><source src="/images/projects/watercolor/elderisland-bonfires.mp4" type="video/mp4"></video>' +
+                        '<p>Bonfires – Elder Island</p>' +
                         '</div>'
                     )
                     .append('<p>' + projectInformation + '</p>')

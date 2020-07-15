@@ -125,6 +125,7 @@ $(document).ready(function() {
         var audio = document.querySelector('audio');
         var audioSrc = ctx.createMediaElementSource(audio);
         var analyser = ctx.createAnalyser();
+        app.ctx = ctx;
         app.audio = audio;
         app.audio.volume = 0.25;
 
