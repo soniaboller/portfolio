@@ -1,22 +1,26 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "private": true,
   "scripts": {
     "start": "gulp"
   },
   "dependencies": {
-    "body-parser": "~1.15.1",
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.4.1",
-    "express": "~4.13.4",
+    "express": "^4.17.1",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^2.3.2",
     "gulp-watch": "^4.3.11",
-    "morgan": "~1.7.0",
-    "node-sass-middleware": "0.8.0",
-    "serve-favicon": "~2.3.0"
+    "morgan": "^1.10.0",
+    "node-sass-middleware": "^0.11.0",
+    "serve-favicon": "^2.5.0"
   }
 }
